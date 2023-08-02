@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import environ
 import os
+from django.contrib.messages import constants as messages
+
+
+
 
 environ.Env.read_env()
 
@@ -51,6 +55,7 @@ INSTALLED_APPS = [
     'frontend',
     "phonenumber_field",
     "django_htmx",
+    "django_ajax",
 ]
 
 MIDDLEWARE = [
@@ -84,6 +89,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
+#messages 
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -121,13 +134,13 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 PHONENUMBER_DEFAULT_REGION = 'US'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
 USE_TZ = True
 
-DATE_INPUT_FORMATS = ["%m.%d.%Y"]
+DATETIME_FORMAT="m-d-Y || H:i"
 USE_L10N = False
 
 

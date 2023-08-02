@@ -6,7 +6,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 {% load static %}
-  <title>Gp Bootstrap Template - Index</title>
+
+
+  <title>Taos Haus Tech Home</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -49,10 +51,10 @@
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          {% comment %} <li><a class="nav-link scrollto" href="#team">Team</a></li> {% endcomment %}
           
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="nav-link scrollto" href="#contact">DJ Services</a></li>
+          {% comment %} <li><a class="nav-link scrollto" href="#contact">DJ Services</a></li> {% endcomment %}
 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -60,6 +62,10 @@
 
 
     </div>
+
+
+
+    
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
@@ -83,7 +89,7 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="">Website Upgrades</a></h3>
+            <h3><a href="">Mobile Optimization</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
@@ -117,7 +123,7 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <img src="{% static 'frontend/img/img-new/api (1).png' %}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
             <h3>Profesional & Personalized Website and Online Sales Solutions</h3>
@@ -127,7 +133,7 @@
             <ul>
               <li><i class="ri-check-double-line"></i> Taos Haus offers unique and personalized website development solutions. I will work closely with you to create a captivating and functional website that truly showcases your brand and idea.</li>
               <li><i class="ri-check-double-line"></i> With over 12 years of ecommerce experience, we will guide you through the process of setting up and optimizing your online store and any attachments and integrations needed to thrive.</li>
-              <li><i class="ri-check-double-line"></i> Our expert consultation services aim to transform your business into a successful online venture with an Technical Expert by your side.</li>
+              <li><i class="ri-check-double-line"></i> Expert consultation services aim to transform your business into a successful online venture with an Technical Expert by your side.</li>
             </ul>
             <p>
               
@@ -138,61 +144,11 @@
         </div>
 
       </div>
+
+      <div id="alert" style="display:none;"></div>
     </section><!-- End About Section -->
 
-    {% comment %} <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Clients Section --> {% endcomment %}
-
-    {% comment %} <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="image col-lg-6" style='background-image: url("assets/img/features.jpg");' data-aos="fade-right"></div>
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-receipt"></i>
-              <h4>Est labore ad</h4>
-              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-cube-alt"></i>
-              <h4>Harum esse qui</h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-images"></i>
-              <h4>Aut occaecati</h4>
-              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-shield"></i>
-              <h4>Beatae veritatis</h4>
-              <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Features Section --> {% endcomment %}
+   
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -208,15 +164,15 @@
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4><a href="">Website Development</a></h4>
-              <p>Basic one page websites to fully functional daabase driven web applications.</p>
+              <p>Basic one page websites to fully functional database driven web applications.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Website Upgrades</a></h4>
-              <p>Upgrades and fixes to add functionality or new sections to current websites or online stores</p>
+              <h4><a href="">Mobile Optimization</a></h4>
+              <p>Responsive  intuitive design for mobile browsers aim to deliver a better customer experience</p>
             </div>
           </div>
 
@@ -411,135 +367,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    {% comment %} <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row no-gutters">
-          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
-          <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
-            <div class="content d-flex flex-column justify-content-center">
-              <h3>Voluptatem dignissimos provident quasi</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
-              <div class="row">
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-emoji-smile"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2" class="purecounter"></span>
-                    <p><strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-journal-richtext"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="2" class="purecounter"></span>
-                    <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-clock"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="4" class="purecounter"></span>
-                    <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-award"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="4" class="purecounter"></span>
-                    <p><strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et nemo pad der</p>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End .content-->
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Counts Section --> {% endcomment %}
-
-    {% comment %} <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section --> {% endcomment %}
+      
 
     
 
@@ -552,8 +380,8 @@
           <p>Contact Us</p>
         </div>
 
-        <div>
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        <div class='border border-warning'>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6506.343137822464!2d-105.57936466202256!3d36.405194371076156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRestaurants!5e0!3m2!1sen!2sus!4v1690923053899!5m2!1sen!2sus" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class='text-center mt-4 p-3'>
           <h2>Contact Justin for a Consultation</h2>
@@ -585,8 +413,12 @@
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form id='test-modal-confirm' action='{% url "contact_us" %}' method="POST" role="form" class="">
+         
+            
+          
+            
+          
+            <form id='post-form' action='{% url "contact_us" %}' method="POST" role="form" class="">
             {% csrf_token %}
               <div class="row">
               <p>{{contact_form.non_field_errors }}</p>
@@ -613,9 +445,7 @@
               <div class="form-group mt-3">
                 <textarea id="{{ contact_form.customer_notes.name }}" class="form-control" name="{{ contact_form.customer_notes.name }}" {% if contact_form.customer_notes.value != None %} value="{{ contact_form.customer_notes.value|stringformat:'s' }}"{% endif %} rows="5" placeholder="Message" required></textarea>              </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+               
               </div>
               <div class="text-center"><button type="submit" id='contact-form-submit' class='btn btn-warning'>Send Message</button></div>
             </form>
@@ -627,22 +457,7 @@
       </div>
 
       <!-- Modal success -->
-      <div class="modal" tabindex="-1" role="dialog" id="confirmationModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Confirmation</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you want to submit the form?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary" id="confirmSubmitBtn">Confirm</button>
-      </div>
+      
     </div>
   </div>
 </div>
@@ -659,33 +474,22 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>Gp<span>.</span></h3>
+              <h3>THTS<span>.</span></h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+              
+                Taos, NM, USA<br><br>
+                <strong>Phone:</strong>(973) 598-5837 <br>
+                <strong>Email:</strong> taos.haus.thumps@gmail.com<br>
               </p>
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              
+                <a href="#" class="google-plus"><i class="bi bi-github"></i></a>
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
+      
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
@@ -698,14 +502,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
+          
 
         </div>
       </div>
@@ -715,13 +512,7 @@
       <div class="copyright">
         &copy; Copyright <strong><span>Taos Haus Tech</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">T.H.T.S.</a>
-      </div>
+      
     </div>
   </footer><!-- End Footer -->
 
@@ -740,29 +531,29 @@
   <!-- Template Main JS File -->
   <script src='{% static "frontend/js/main.js" %}'></script>
   <script src="{% static 'frontend/js/htmx.min.js' %}" defer></script>
-
-
-  <script>
-    // Listen for form submission
-    document.getElementById('test-modal-confirm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the form from submitting directly
-
-        // Open the confirmation modal
-        $('#confirmationModal').modal('show');
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(function() {
+    $('#contact-form-submit').on('submit', function(event) {
+      event.preventDefault();
+      $.ajax({
+        url: '{% url "contact_us" %}',
+        type: 'POST',
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function(response) {
+          if (response.success) {
+            $('#post-form').hide();
+            $('#alert').html('<div class="alert alert-success">Thank you for your message!</div>').show();
+          } else {
+            $('#alert').html('<div class="alert alert-danger">' + response.errors + '</div>').show();
+          }
+        }
+      });
     });
-
-    // Listen for the confirm button click inside the modal
-    document.getElementById('confirmSubmitBtn').addEventListener('click', function () {
-        // Submit the form when confirmed
-        document.getElementById('test-modal-confirm').submit();
-    });
+  });
 </script>
-
-Make sure you have included the necessary Bootstrap and jQuery libraries for the modal functionality to work. Also, remember to update the form's ID in the JavaScript code if it's different from contactForm.
-
-With this code, when the user clicks the "Send Message" button, the form submission will be intercepted, and the confirmation modal will be displayed. If the user clicks the "Confirm" button inside the modal, the form will be submitted. If the user clicks "Cancel" or closes the modal, the form submission will be canceled.
-
-
+  
 
 
 </body>

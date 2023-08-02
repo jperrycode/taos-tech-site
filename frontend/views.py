@@ -4,12 +4,13 @@ from .forms import ContactForm
 from main.settings import DEFAULT_FROM_EMAIL as from_email
 from django.core.mail import send_mail, BadHeaderError
 
+
 # Create your views here.
 
 # send email functionality and save customer form data to model
+
 def contact_us(request):
   if request.method == 'POST':
-    print('method-post')
     contact_form = ContactForm(request.POST or None)
     if contact_form.is_valid():
       contact_form.save()
@@ -24,13 +25,14 @@ def contact_us(request):
       print(message)
       try:
         send_mail(subject, message, from_email, [user_email]) 
-        print('email sent')
+        
       except BadHeaderError:
         return HttpResponse('Invalid header found.')
-      # return redirect ('annex_home')
+      
     contact_form = ContactForm()
   print(contact_form.errors)
   return redirect('home')
+  
 
 
 # home page view with contact modelform context

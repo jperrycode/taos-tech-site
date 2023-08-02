@@ -41,7 +41,7 @@ class Customer_contact_info(models.Model):
     internal_progress = models.CharField(max_length=20, choices=INTERNAL_PROGRESS, blank=True, null=True)
     work_estimate = models.FloatField(null=True, blank=True)
     payment_complete = models.BooleanField(default=False, editable=True)
-    submission_time = models.DateField(auto_now=True)
+    submission_time = models.DateTimeField(auto_now=False, auto_now_add=True)
     
     class Meta:
         verbose_name = "Customer Contact"
