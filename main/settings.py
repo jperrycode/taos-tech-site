@@ -42,7 +42,9 @@ SECRET_KEY = env('APP_SECRET_KEY') , get_random_secret_key()
 # SECURITY WARNING: don't run with debug turned on in production!       
 DEBUG = env("DEBUG", False) == True
 
-DJANGO_ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", "localhost", " justinperryrevolt.pythonanywhere.com")
+DJANGO_ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS")
+
+ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(',')
 
 DEVELOPMENT_MODE = env("DEVELOPMENT_MODE") 
 
