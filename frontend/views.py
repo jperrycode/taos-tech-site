@@ -1,10 +1,15 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
 from .forms import ContactForm
-from main.settings import DEFAULT_FROM_EMAIL as from_email
 from django.core.mail import send_mail, BadHeaderError
+import environ
 
 
+environ.Env.read_env()
+env = environ.Env(
+)
+
+from_email = env('DEFAULT_FROM_EMAIL')
 # Create your views here.
 
 # send email functionality and save customer form data to model
