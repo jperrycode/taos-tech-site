@@ -11,22 +11,18 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import environ
+from dotenv import load_dotenv
 import os
 import sys
 from django.contrib.messages import constants as messages
 from django.core.management.utils import get_random_secret_key
 
 
+load_dotenv()
 
 
-environ.Env.read_env()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-env = environ.Env(
-    DEBUG=(bool, False),
-    ENVIORNMENT=(str, 'PRODUCTION'),
-)
 
 
 
@@ -38,26 +34,26 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep t secret key used in production secret!
-SECRET_KEY = str(env('APP_SECRET_KEY')) , get_random_secret_key()
+SECRET_KEY = str(os.environ.get('APP_SECRET_KEY')) , get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!       
-DEBUG = env("DEBUG", False) == True
+DEBUG = os.environ.get("DEBUG", False) == True
 
-DJANGO_ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS")
+DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(',')
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(',')
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(',')
 
-DEVELOPMENT_MODE = env("DEVELOPMENT_MODE") 
+DEVELOPMENT_MODE = os.environ.get("DEVELOPMENT_MODE") 
 
 
 ADMINS = [('Justin', 'taos.haus.thumps@gmail.com')]
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = os.environ.get("PROD_HTTPS_SWITCH") 
 
 
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = os.environ.get("PROD_HTTPS_SWITCH") 
 
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = os.environ.get("PROD_HTTPS_SWITCH") 
 # Application definition
 
 INSTALLED_APPS = [
@@ -131,11 +127,11 @@ elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
     DATABASES = {
           'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': env('DB_NAME'),
-    'USER': env('DB_USER'),
-    'PASSWORD': env('DB_PASSWORD'),
-    'HOST': env('DB_HOST'),
-    'PORT': env('DB_PORT'),
+    'NAME': os.environ.get('DB_NAME'),
+    'USER': os.environ.get('DB_USER'),
+    'PASSWORD': os.environ.get('DB_PASSWORD'),
+    'HOST': os.environ.get('DB_HOST'),
+    'PORT': os.environ.get('DB_PORT'),
   },
     }
 
@@ -191,6 +187,6 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
