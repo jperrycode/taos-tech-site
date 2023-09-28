@@ -88,3 +88,6 @@ local_settings.py
 .env
 db.sqlite3
 main/settings_dev.py
+frontend/__pycache__/views.cpython-310.pyc
+main/__pycache__/settings.cpython-310.pyc
+main/__pycache__/urls.cpython-310.pyc
