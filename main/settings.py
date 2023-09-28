@@ -100,6 +100,8 @@ MESSAGE_TAGS = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
+DATABASE_URL = str(os.getenv('DATABASE_URL'))
+
 
 if DEVELOPMENT_MODE is True:
     DATABASES = {
@@ -114,10 +116,10 @@ elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
     DATABASES = {
           'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': os.getenv('DB_NAME'),
-    'USER': os.getenv('DB_USER'),
-    'PASSWORD': os.getenv('DB_PASSWORD'),
-    'HOST': os.getenv('DB_HOST'),
+    'NAME':str(os.getenv('DB_NAME')),
+    'USER': str(os.getenv('DB_USER')),
+    'PASSWORD': str(os.getenv('DB_PASSWORD')),
+    'HOST': str(os.getenv('DB_HOST')),
     'PORT': os.getenv('DB_PORT'),
   },
     }
