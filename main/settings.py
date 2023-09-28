@@ -2,11 +2,12 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 import sys
+import dj_database_url
 from django.contrib.messages import constants as messages
 
 
-
-load_dotenv()
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 
 
@@ -31,13 +32,16 @@ DEVELOPMENT_MODE = False
 
 
 ADMINS = []
-
-SECURE_SSL_REDIRECT = True 
-
-
-SESSION_COOKIE_SECURE = True 
-
-CSRF_COOKIE_SECURE = True 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY' 
+SECURE_SSL_REDIRECT = True
 # Application definition
 
 SECURE_HSTS_SECONDS = 100000 
@@ -125,6 +129,12 @@ elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
     }
 
 
+
+DATABASES['default'] = dj_database_url.config(
+    default=str(os.getenv('DATABASE_URL')),
+    conn_max_age=600,
+    conn_health_checks=True,
+)
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
