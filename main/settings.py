@@ -25,7 +25,7 @@ DEBUG = False
 
 # DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
 DJANGO_ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://taos-haus-prod-c23cfbf62e3b.herokuapp.com/', 'https://taos-haus-tech-stage-f300deeac822.herokuapp.com/']
 
 DEVELOPMENT_MODE = False
 
