@@ -1,0 +1,88 @@
+ <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </div>
+
+        <div class='border border-warning'>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6506.343137822464!2d-105.57936466202256!3d36.405194371076156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRestaurants!5e0!3m2!1sen!2sus!4v1690923053899!5m2!1sen!2sus" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class='text-center mt-4 p-3'>
+          <h2>Contact Justin for a Consultation</h2>
+        </div>
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Taos, New Mexico</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Send me an Email:</h4>
+                <p>taos.haus.tech@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Give me a Call:</h4>
+                <p>(973) - 598 - 5837</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+         
+            
+          
+            
+          
+            <form id='post-form' action='{% url "contact_us" %}' method="POST" role="form" class="">
+            {% csrf_token %}
+              <div class="row">
+              <p>{{contact_form.non_field_errors }}</p>
+                <div class="col-md-6 form-group">
+                  <input type="text" name="{{ contact_form.customer_name.name }}" {% if contact_form.customer_name.value != None %} value="{{ contact_form.customer_name.value|stringformat:'s' }}"{% endif %}
+                      maxlength="{{ contact_form.customer_name.field.max_length }}" class='form-control' id='{{ contact_form.customer_name.name }}' placeholder='Your Name' required/>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                 <input type="email" name="{{ contact_form.customer_email.name }}" {% if contact_form.customer_email.value != None %} value="{{ contact_form.customer_email.value|stringformat:'s' }}"{% endif %}
+                      maxlength="{{ contact_form.customer_email.field.max_length }}" class='form-control' id='{{ contact_form.customer_email.name }}' placeholder='Your Email' required/>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6 form-group">
+                <input type="tel" name="{{ contact_form.customer_phone.name }}" {% if contact_form.customer_phone.value != None %} value="{{ contact_form.customer_phone.value|stringformat:'s' }}"{% endif %}
+                      maxlength="{{ contact_form.customer_phone.field.max_length }}" class='form-control' id='{{ contact_form.customer_phone.name }}' placeholder='Your Phone' required/>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" name="{{ contact_form.customer_contact_subject.name }}" {% if contact_form.customer_contact_subject.value != None %} value="{{ contact_form.customer_contact_subject.value|stringformat:'s' }}"{% endif %}
+              maxlength="{{ contact_form.customer_contact_subject.field.max_length }}" class='form-control' id='{{ contact_form.customer_contact_subject.name }}' placeholder='Subject' required/>
+                </div>
+              </div>
+              
+              <div class="form-group mt-3">
+                <textarea id="{{ contact_form.customer_notes.name }}" class="form-control" name="{{ contact_form.customer_notes.name }}" {% if contact_form.customer_notes.value != None %} value="{{ contact_form.customer_notes.value|stringformat:'s' }}"{% endif %} rows="5" placeholder="Message" required></textarea></div>
+              <div class="my-3">
+               
+              </div>
+              <div class="text-center"><button type="submit" id='contact-form-submit' class='btn btn-warning'>Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Modal success -->
+      
+    </div>
+  </div>
+</div>
