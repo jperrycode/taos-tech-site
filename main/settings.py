@@ -25,7 +25,7 @@ SECRET_KEY = str(os.getenv('APP_SECRET_KEY'))
 DEBUG = False
 
 # DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
-DJANGO_ALLOWED_HOSTS = ['*']
+DJANGO_ALLOWED_HOSTS = ['https://taos-haus-prod-c23cfbf62e3b.herokuapp.com/', 'https://taos-haus-tech-stage-f300deeac822.herokuapp.com/']
 ALLOWED_HOSTS = ['https://taos-haus-prod-c23cfbf62e3b.herokuapp.com/', 'https://taos-haus-tech-stage-f300deeac822.herokuapp.com/']
 
 DEVELOPMENT_MODE = False
@@ -107,17 +107,8 @@ MESSAGE_TAGS = {
 DATABASE_URL = str(os.getenv('DATABASE_URL'))
 
 
-if DEVELOPMENT_MODE is True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
-    }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DB_HOST", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
+
+DATABASES = {
           'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME':str(os.getenv('DB_NAME')),
