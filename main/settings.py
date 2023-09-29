@@ -25,8 +25,8 @@ SECRET_KEY = str(os.getenv('APP_SECRET_KEY'))
 DEBUG = False
 
 # DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
-DJANGO_ALLOWED_HOSTS = ['.herokuapp.com']
-ALLOWED_HOSTS = ['.herokuapp.com']
+DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com']
+ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com']
 
 DEVELOPMENT_MODE = False
 
