@@ -3,6 +3,7 @@ from django.shortcuts import HttpResponse
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from main.settings import DEFAULT_FROM_EMAIL
+from django.views import View
 
 
 
@@ -39,7 +40,23 @@ def contact_us(request):
 
 
 # home page view with contact modelform context
-def mainpageview(request):
-    contact_form = ContactForm()
-    context = {'contact_form': contact_form,}
-    return render(request, 'index.html', context)
+class MainPageView(View):
+    def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'index.html', context)
+
+
+
+class EcomPageView(View):
+   def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'index_ecom.html', context)
+   
+
+class WebPageView(View):
+   def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'index_web.html', context)

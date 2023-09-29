@@ -30,6 +30,7 @@
 
   <!-- Template Main CSS File -->
   <link href='{% static "frontend/css/style.css" %}' rel="stylesheet">
+  <link href='{% static "frontend/css/ecom_hero.css" %}' rel="stylesheet">
 
   <!-- HTMX -->
 
@@ -56,6 +57,7 @@
 </head>
 
 <body>
+{% include 'nav.html' %}
 {% block main-body %}
 
 {% endblock %}

@@ -1,0 +1,51 @@
+  <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">Taos Haus Solutions</a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse p-3" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'ecom' %}">Ecommerce Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'web' %}">Website Services</a>
+          </li>
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href="#!">DJ Services</a>
+          </li> {% endcomment %}
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href="#!">Contact</a>
+          </li> {% endcomment %}
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+        
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="https://www.linkedin.com/in/justinperrydeveloper/">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="https://www.instagram.com/taos_haus/">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+           <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="https://github.com/jperrycode">
+              <i class="bi bi-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
