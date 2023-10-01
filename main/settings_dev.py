@@ -45,7 +45,7 @@ ADMINS = [('Justin', 'taos.haus.thumps@gmail.com')]
 # SESSION_COOKIE_SECURE = False
 
 # CSRF_COOKIE_SECURE = False
-# Application definition
+# Application definitionaaaa
 
 INSTALLED_APPS = [
     'django.contrib.admin',
