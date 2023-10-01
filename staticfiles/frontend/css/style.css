@@ -17,7 +17,7 @@ body {
 
 
 a {
-  color: #ffc451;
+  color: #0a031e;
   text-decoration: none;
 }
 
@@ -1217,7 +1217,7 @@ section {
 --------------------------------------------------------------*/
 .contact .info {
   width: 100%;
-  background: #fff;
+  
 }
 
 .contact :is(.info,.phone,.email) i {
