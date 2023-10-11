@@ -54,9 +54,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'frontend',
-    "phonenumber_field",
-    "django_htmx",
-    "django_ajax",
+    'phonenumber_field',
+    'django_htmx',
+    'django_ajax',
 ]
 
 MIDDLEWARE = [

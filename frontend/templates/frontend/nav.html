@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+  <nav class="navbar navbar-expand-lg navbar-hide-on-scroll fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}">Taos Haus Solutions</a>
       <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -10,7 +10,7 @@
         <ul class="navbar-nav me-auto">
          
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="{% url 'home' %}#about">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'ecom' %}">E-commerce Services</a>
@@ -21,9 +21,9 @@
           {% comment %} <li class="nav-item">
             <a class="nav-link" href="#!">DJ Services</a>
           </li> {% endcomment %}
-          {% comment %} <li class="nav-item">
-            <a class="nav-link" href="#!">Contact</a>
-          </li> {% endcomment %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact  %}">Contact Justin</a>
+          </li> 
         </ul>
         <ul class="navbar-nav d-flex flex-row">
         
