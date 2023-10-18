@@ -12,6 +12,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+ 
 }
 
 
@@ -188,6 +189,7 @@ h6 {
 */
 .navbar {
   padding: 0;
+  transition: top 1s;
 }
 
 .navbar ul {
@@ -1562,3 +1564,4 @@ section {
   font-size: 13px;
   color: #fff;
 }
+

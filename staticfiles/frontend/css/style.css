@@ -12,12 +12,13 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+ 
 }
 
 
 
 a {
-  color: #0a031e;
+  color: #382c13;
   text-decoration: none;
 }
 
@@ -188,6 +189,7 @@ h6 {
 */
 .navbar {
   padding: 0;
+  transition: top 1s;
 }
 
 .navbar ul {
@@ -406,6 +408,14 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/img-new/bg-hero.jpg") top center;
+  background-size: cover;
+  position: relative;
+}
+
+.hero_ecom {
   width: 100%;
   height: 100vh;
   background: url("../img/img-new/bg-hero.jpg") top center;
@@ -1217,7 +1227,6 @@ section {
 --------------------------------------------------------------*/
 .contact .info {
   width: 100%;
-  
 }
 
 .contact :is(.info,.phone,.email) i {
@@ -1555,3 +1564,4 @@ section {
   font-size: 13px;
   color: #fff;
 }
+

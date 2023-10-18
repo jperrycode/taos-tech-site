@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'frontend/base.html' %}
 {% load static %}
 {% block title %}Website Solutions{% endblock %}
 
@@ -6,14 +6,14 @@
 
  <!-- ======= Hero Section ======= -->
   <section id="hero_ecom" class="d-flex align-items-center justify-content-center">
-    {% include 'hero_web.html' %}
+    {% include 'frontend/hero_web.html' %}
   </section><!-- End Hero -->
 
   <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact mb-5" style="background: linear-gradient(to bottom, #000000, #ffffff);">
-     {% include 'contact_calendly.html' %}
+     {% include 'frontend/contact_calendly.html' %}
     </section><!-- End Contact Section -->
 
 
-{% include 'footer.html' %}
+{% include 'frontend/footer.html' %}
 {% endblock %}

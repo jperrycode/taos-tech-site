@@ -292,4 +292,21 @@
 
 })()
 
+let prevScrollPos = window.scrollY;
+const navbar = document.querySelector(".navbar");
+
+window.onscroll = function () {
+    let currentScrollPos = window.scrollY;
+
+    if (prevScrollPos > currentScrollPos) {
+        // Scrolling up, show the navbar
+        navbar.style.top = "0";
+    } else {
+        // Scrolling down, hide the navbar
+        navbar.style.top = `-${navbar.clientHeight}px`;
+    }
+
+    prevScrollPos = currentScrollPos;
+};
+
 
