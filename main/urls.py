@@ -4,6 +4,9 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
+admin.site.site_header = 'Taos Haus Tech'
+admin.site.index_title = 'THTS Data'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('frontend.urls')),
