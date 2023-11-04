@@ -1565,3 +1565,26 @@ section {
   color: #fff;
 }
 
+.text-font-change {
+  font-family: Copperplate, Copperplate Gothic Light, fantasy;
+}
+
+
+.overlay-aboutsec:hover {
+  opacity: 1;
+  
+}
+
+
+.overlay-aboutsec {
+  opacity: 0;
+  transition: transform 1s;
+}
+
+
+.about-hover  {
+  text-shadow: 0px 3px 3px rgba(7, 7, 7, 0.5); 
+  
+  font-size: 45px;
+}
+
