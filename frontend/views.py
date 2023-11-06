@@ -92,3 +92,16 @@ def SuccessPageView(request):
    
 class FailPageView(View):
    template_name = 'frontend/contact_fail.html'
+
+
+class TeamPageView(View):
+   def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'frontend/index_team.html', context)
+   
+class StagePageView(View):
+   def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'frontend/stageing.html', context)

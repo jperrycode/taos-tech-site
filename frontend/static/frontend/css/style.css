@@ -1588,3 +1588,51 @@ section {
   font-size: 45px;
 }
 
+#call-action > li {
+  margin: 20px;
+}
+
+.img-hover:hover {
+
+opacity: .5;
+background-color: rgba(217, 255, 0, 0.472);
+
+}
+
+
+.img-hover {
+  transition: opacity 1s;
+
+}
+
+
+    /* Custom CSS for image hover effect */
+    .img-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-container img {
+      transition: opacity 0.3s;
+    }
+
+    .img-container:hover img {
+      opacity: 0.7; /* Reduce opacity on hover */
+    }
+
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .img-container:hover .text-overlay {
+      display: block; /* Show text on hover */
+    }
