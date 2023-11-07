@@ -1,6 +1,14 @@
 #hero_ecom {
     width: 100%;
-    height: 140vh;
+    height: 100vh;
+    background: url("../img/img-new/bg-hero.jpg") top center;
+    background-size: cover;
+    position: relative;
+  }
+
+  #team_ecom {
+    width: 100%;
+    height: 130vh;
     background: url("../img/img-new/bg-hero.jpg") top center;
     background-size: cover;
     position: relative;
@@ -12,7 +20,7 @@
   }
 
   
-  #hero_ecom:before {
+  #hero_ecom:before, #team_ecom:before {
     content: "";
     background: rgba(0, 0, 0, 0.6);
     position: absolute;
@@ -22,13 +30,13 @@
     right: 0;
   }
   
-  #hero_ecom .container {
+  #hero_ecom .container, #team_ecom .container {
     position: relative;
     padding-top: 74px;
     text-align: center;
   }
   
-  #hero_ecom h1 {
+  #hero_ecom h1, #team_ecom h1 {
     margin: 0;
     font-size: 56px;
     font-weight: 700;
@@ -37,11 +45,11 @@
     font-family: "Poppins", sans-serif;
   }
   
-  #hero_ecom h1 span {
+  #hero_ecom h1 span, #team_ecom h1 span {
     color: #ffc451;
   }
   
-  #hero_ecom h2 {
+  #hero_ecom h2, #team_ecom h2 {
     color: rgba(255, 255, 255, 0.9);
     margin: 10px 0 0 0;
     font-size: 24px;
