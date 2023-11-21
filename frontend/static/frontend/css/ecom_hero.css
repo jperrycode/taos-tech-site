@@ -8,7 +8,6 @@
 
   #team_ecom {
     width: 100%;
-    height: 140vh;
     background: url("../img/img-new/bg-hero.jpg") top center;
     background-size: cover;
     position: relative;
@@ -185,3 +184,7 @@
     }
   }
 
+  .team-name-font {
+    font-size: 36px !important;
+
+  }
