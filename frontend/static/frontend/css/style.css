@@ -1640,7 +1640,7 @@ background-color: rgba(217, 255, 0, 0.472);
 
     /* dj section */
 
-      .text-gradient {
+    .text-gradient {
         background: rgb(15, 238, 226);
         background: linear-gradient(45deg, rgba(15, 238, 226, 1) 20%, rgba(29, 27, 27, 0.9848272072500875) 40%, rgba(158, 18, 43, 1) 60%);
         background-clip: text;
@@ -1653,7 +1653,7 @@ background-color: rgba(217, 255, 0, 0.472);
 
 
       
-  #hero-dj {
+    #hero-dj {
       width: 100%;
       height: 100vh;
       background: linear-gradient(78deg, rgba(15, 238, 226, 1) 20%, rgba(29, 27, 27, 0.9848272072500875) 40%, rgba(158, 18, 43, 1) 60%);
@@ -1662,6 +1662,15 @@ background-color: rgba(217, 255, 0, 0.472);
       animation: gradientMove 10s linear infinite alternate; 
     }
 
+    #contact-dj {
+
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(bottom to top, rgba(15, 238, 226, 1) 20%, rgba(29, 27, 27, 0.9848272072500875) 40%, rgba(158, 18, 43, 1) 60%);
+      background-size: 500% 500%;
+      position: relative;
+      animation: gradientMove 10s linear infinite alternate; 
+    }
     @keyframes gradientMove {
       0% {
         background-position: 0% 0%;
