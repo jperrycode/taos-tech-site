@@ -1690,4 +1690,7 @@ background-color: rgba(217, 255, 0, 0.472);
       padding: 20px;
       color: #333;
     }
-    
+
+.gradient-back {
+background: linear-gradient(to bottom, #000000, #ffffff);
+}
