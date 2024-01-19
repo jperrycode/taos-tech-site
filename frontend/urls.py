@@ -13,4 +13,5 @@ urlpatterns = [
     path('contact-us-fail/', FailPageView.as_view(), name='contact_fail'),
      path('the-team/', TeamPageView.as_view(), name='team'),
       path('stage/', StagePageView.as_view(), name='stage'),
+      path('taos-haus-thumps/', DjPageView.as_view(), name='this-justin'),
 ]

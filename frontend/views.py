@@ -105,3 +105,11 @@ class StagePageView(View):
         contact_form = ContactForm()
         context = {'contact_form': contact_form}
         return render(request, 'frontend/stageing.html', context)
+     
+     
+
+class DjPageView(View):
+    def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'frontend/dj_index.html', context)
