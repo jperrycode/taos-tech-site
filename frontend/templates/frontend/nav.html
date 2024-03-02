@@ -1,53 +1,103 @@
-  <nav class="navbar navbar-expand-lg navbar-hide-on-scroll fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">Taos Haus Solutions</a>
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse p-3 me-auto" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-         
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'ecom' %}">E-commerce Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'web' %}">Website Services</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="{% url 'team'  %}">The Team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact_page'  %}">Contact Justin</a>
-          </li> 
-          
-        </ul>
-        <ul class="navbar-nav d-flex flex-row">
-        
-          <li class="nav-item me-3 me-lg-0">
-            <a class="nav-link" href="https://www.linkedin.com/in/justinperrydeveloper/">
-              <i class="bi bi-linkedin"></i>
-            </a>
-          </li>
-          <li class="nav-item me-3 me-lg-0">
-            <a class="nav-link" href="https://www.instagram.com/taos_haus/">
-              <i class="bi bi-instagram"></i>
-            </a>
-          </li>
-           <li class="nav-item me-3 me-lg-0">
-            <a class="nav-link" href="https://github.com/jperrycode">
-              <i class="bi bi-github"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+<nav id="navbar-desk" class="navbar navbar-expand-md navbar-dark bg-transparent navbar-hide-on-scroll fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-4" href="{% url 'home' %}">Taos Haus Tech</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul id="text-equal-marg" class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ecom' %}">E-commerce Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'web' %}">Website Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'hardware'  %}">Computer Repair</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'team'  %}">The Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact_page'  %}">Contact Justin</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-flex flex-row">
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="https://www.linkedin.com/in/justinperrydeveloper/">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="https://www.instagram.com/taos_haus/">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="https://github.com/jperrycode">
+            <i class="bi bi-github"></i>
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  <!-- Navbar -->
+  </div>
+</nav>
+<!-- Navbar -->
+<nav id="navbar-mob" class="navbar navbar-expand-md navbar-dark bg-transparent navbar-hide-on-scroll fixed-top d-md-none">
+  <div class="pt-3 container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">Taos Haus Tech</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse mt-3 pt-4 w-50 mx-auto rounded bg-secondary bg-gradient bg-opacity-75 navbar-collapse" id="navbarSupportedContent">
 
+        <ul class="navbar-nav d-flex flex-column">
+    <li class="nav-item">
+        <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item me-3 me-lg-0">
+                <a class="nav-link" href="https://www.linkedin.com/in/justinperrydeveloper/">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+                <a class="nav-link" href="https://www.instagram.com/taos_haus/">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+                <a class="nav-link" href="https://github.com/jperrycode">
+                    <i class="bi bi-github"></i>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}#about">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'ecom' %}">E-commerce Services</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'web' %}">Website Services</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'hardware'  %}">Computer Repair</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'team'  %}">The Team</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact_page'  %}">Contact Justin</a>
+    </li>
+</ul>
 
-
+    </div>
+  </div>
+</nav>

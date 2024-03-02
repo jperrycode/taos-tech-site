@@ -85,6 +85,12 @@ class WebPageView(View):
         contact_form = ContactForm()
         context = {'contact_form': contact_form}
         return render(request, 'frontend/index_web.html', context)
+
+class HardwarePageView(View):
+    def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'frontend/index_hardware.html', context)
    
 def SuccessPageView(request):
     return render(request, 'frontend/index_success.html')
