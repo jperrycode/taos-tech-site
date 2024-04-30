@@ -6,18 +6,12 @@ from main.settings import DEFAULT_FROM_EMAIL as df_email
 from django.views import View
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
+from django.views.generic import TemplateView
 from django.urls import reverse
-
-
+from .models import DjServices
 
 
 # Create your views here.
-
-
-
-
-
-
 
 
 # class ContactUsView(View):
@@ -26,15 +20,14 @@ from django.urls import reverse
 
 #         if contact_form.is_valid():
 #             contact_form.save()
-            
-               
-            
+
+
 #             # subject = contact_form.cleaned_data['customer_contact_subject']
-            
+
 #             # body = {
 #             #     'name': contact_form.cleaned_data['customer_name'],
 #             #     'message': contact_form.cleaned_data['customer_notes'],     
-                
+
 #             # }
 
 #             # message = "\n".join(body.values())
@@ -49,16 +42,13 @@ from django.urls import reverse
 #         print(contact_form.errors)
 #         return render(request, 'frontend/contact_fail.html',)  # Redirect to fail page if form is invalid
 
-  
-
-
 
 class Contact_model_view(CreateView):
-   form_class = ContactForm
-   template_name = 'frontend/index_form.html'
-   success_url = reverse_lazy('contact_suc')
+    form_class = ContactForm
+    template_name = 'frontend/index_form.html'
+    success_url = reverse_lazy('contact_suc')
 
-   def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['contact_form'] = ContactForm()
         return context
@@ -72,44 +62,50 @@ class MainPageView(View):
         return render(request, 'frontend/index.html', context)
 
 
-
 class EcomPageView(View):
-   def get(self, request):
-        contact_form = ContactForm()
-        context = {'contact_form': contact_form}
-        return render(request, 'frontend/index_ecom.html', context)
-   
-
-class WebPageView(View):
-   def get(self, request):
-        contact_form = ContactForm()
-        context = {'contact_form': contact_form}
-        return render(request, 'frontend/index_web.html', context)
-   
-def SuccessPageView(request):
-    return render(request, 'frontend/index_success.html')
-  
-   
-class FailPageView(View):
-   template_name = 'frontend/contact_fail.html'
-
-
-class TeamPageView(View):
-   def get(self, request):
-        contact_form = ContactForm()
-        context = {'contact_form': contact_form}
-        return render(request, 'frontend/index_team.html', context)
-   
-class StagePageView(View):
-   def get(self, request):
-        contact_form = ContactForm()
-        context = {'contact_form': contact_form}
-        return render(request, 'frontend/stageing.html', context)
-     
-     
-
-class DjPageView(View):
     def get(self, request):
         contact_form = ContactForm()
         context = {'contact_form': contact_form}
-        return render(request, 'frontend/dj_index.html', context)
+        return render(request, 'frontend/index_ecom.html', context)
+
+
+class WebPageView(View):
+    def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'frontend/index_web.html', context)
+
+
+def SuccessPageView(request):
+    return render(request, 'frontend/index_success.html')
+
+
+class FailPageView(View):
+    template_name = 'frontend/contact_fail.html'
+
+
+class TeamPageView(View):
+    def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'frontend/index_team.html', context)
+
+
+class StagePageView(View):
+    def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'frontend/stageing.html', context)
+
+
+
+
+
+class DjPageView(TemplateView):
+    template_name = 'frontend/dj-files/dj_index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['contact_form'] = ContactForm()
+        context['services'] = DjServices.objects.all()
+        return context

@@ -1,0 +1,34 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block title %}Taos Tech{% endblock %}
+
+{% block main-body %}
+  <!-- ======= Hero Section ======= -->
+  <div id="media-container">
+    <img src="{% static 'frontend/img/dj/justin_chicken_finger.jpg' %}" class="background-media">
+    <img src="{% static 'frontend/img/dj/justin_sunset.jpg' %}" class="background-media">
+    <video src="{% static 'frontend/img/dj/justin_dj.MOV' %}" class="background-media" autoplay muted loop></video>
+    <video src="{% static 'frontend/img/dj/outside_ski_sf.MOV' %}" class="background-media" autoplay muted loop></video>
+    <!-- Add more images and videos as needed -->
+  </div>
+
+  <main id="main">
+    <!-- ======= Hero Section ======= -->
+    <section id="hero-dj" class="d-flex align-items-center justify-content-center">
+      {% include 'frontend/dj-files/hero_dj.html' %}
+    </section><!-- End Hero -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact-dj" class="contact pb-5 mb-3">
+      {% include 'frontend/dj-files/contact_calendly_dj.html' %}
+    </section><!-- End Contact Section -->
+  </main>
+{% endblock %}
+
+
+    
+
+
+
+
+

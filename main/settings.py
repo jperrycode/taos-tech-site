@@ -22,29 +22,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('APP_SECRET_KEY'))
 
      
-DEBUG = False
+DEBUG = True
 
 # DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
-DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com']
-ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com']
+DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com', '*']
+ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com', '*']
 
-DEVELOPMENT_MODE = False
+DEVELOPMENT_MODE = True
 
 
-ADMINS = []
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_HSTS_SECONDS = 3600
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY' 
-SECURE_SSL_REDIRECT = True
-# Application definition
-
-SECURE_HSTS_SECONDS = 100000 
+# ADMINS = []
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_HSTS_SECONDS = 3600
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_BROWSER_XSS_FILTER = True
+# X_FRAME_OPTIONS = 'DENY'
+# SECURE_SSL_REDIRECT = True
+# # Application definition
+#
+# SECURE_HSTS_SECONDS = 100000
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,14 +57,14 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_htmx',
     'django_ajax',
-    'taoshausdj',
+
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'subdomains.middleware.SubdomainURLRoutingMiddleware',
+    # 'subdomains.middleware.SubdomainURLRoutingMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -75,11 +75,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'main.urls'
 
-SUBDOMAIN_URLCONFS = {
-    None: 'main.urls',  # no subdomain, e.g. ``example.com``
-    'tech': 'frontend.urls',
-    'music': 'taoshausdj.urls',
-}
+# SUBDOMAIN_URLCONFS = {
+#     None: 'main.urls',  # no subdomain, e.g. ``example.com``
+#     'tech': 'frontend.urls',
+#     'music': 'taoshausdj.urls',
+# }
 
 TEMPLATES = [
     {
