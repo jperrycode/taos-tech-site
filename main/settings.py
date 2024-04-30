@@ -57,12 +57,14 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_htmx',
     'django_ajax',
+    'taoshausdj',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'subdomains.middleware.SubdomainURLRoutingMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -72,6 +74,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'main.urls'
+
+SUBDOMAIN_URLCONFS = {
+    None: 'main.urls',  # no subdomain, e.g. ``example.com``
+    'tech': 'frontend.urls',
+    'music': 'taoshausdj.urls',
+}
 
 TEMPLATES = [
     {

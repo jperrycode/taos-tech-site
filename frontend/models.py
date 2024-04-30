@@ -50,10 +50,23 @@ class Customer_contact_info(models.Model):
 
     def __str__(self) -> str:
         return self.customer_name
-    
-
-    
 
 
+#employee profiles
+class EmployeeProfile(models.Model):
+    emp_name = models.CharField(primary_key=True,max_length=50, blank=False)
+    emp_specialties_1 = models.CharField(max_length=250, blank=True, null=True)
+    emp_specialties_2 = models.CharField(max_length=250, blank=True, null=True)
+    emp_specialties_3 = models.CharField(max_length=250, blank=True, null=True)
+    emp_bio = models.TextField(blank=True, null=True)
+    active_employee = models.BooleanField(default=False)
+
+
+    class Meta:
+        verbose_name = "Employee"
+        verbose_name_plural = "Employees"
+
+    def __str__(self) -> str:
+        return self.emp_name
 
   
