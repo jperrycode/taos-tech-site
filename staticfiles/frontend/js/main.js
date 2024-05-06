@@ -310,3 +310,30 @@ window.onscroll = function () {
 };
 
 
+// hero js background
+
+document.addEventListener('DOMContentLoaded', function () {
+    const media = document.querySelectorAll('.background-media');
+    let currentIndex = 0;
+
+    function changeMedia() {
+        const currentMedia = media[currentIndex];
+        const nextIndex = (currentIndex + 1) % media.length;
+        const nextMedia = media[nextIndex];
+
+        currentMedia.style.opacity = 0;
+        nextMedia.style.opacity = 1;
+
+        currentMedia.style.zIndex = 0;
+        nextMedia.style.zIndex = 1;
+
+        currentIndex = nextIndex;
+
+        setTimeout(() => {
+            changeMedia();
+        }, 5000); // Change media every 5 seconds
+    }
+
+    changeMedia();
+});
+

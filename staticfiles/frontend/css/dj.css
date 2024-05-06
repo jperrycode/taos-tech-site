@@ -1,0 +1,140 @@
+.text-gradient {
+    background: rgb(15,238,226);
+background: linear-gradient(45deg, rgba(15,238,226,1) 29%, rgba(29,27,27,0.9848272072500875) 47%, rgba(158,18,43,1) 68%); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#hero-dj-dj {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/img-new/dj-bg-hero.jpg") top center;
+    background-size: cover;
+    position: relative;
+  }
+
+
+  
+
+  
+  #hero-dj:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  #hero-dj .container {
+    position: relative;
+    padding-top: 74px;
+    text-align: center;
+  }
+  
+  #hero-dj h1 {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #hero-dj h1 span {
+    color: #ffc451;
+  }
+  
+  #hero-dj h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0 0 0;
+    font-size: 24px;
+  }
+  
+  #hero-dj .icon-box {
+    padding: 30px 20px;
+    transition: ease-in-out 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 100%;
+    text-align: center;
+  }
+  
+  #hero-dj .icon-box i {
+    font-size: 32px;
+    line-height: 1;
+    color: #ffc451;
+  }
+  
+  #hero-dj .icon-box h3 {
+    font-weight: 700;
+    margin: 10px 0 0 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #hero-dj .icon-box h3 a {
+    color: #fff;
+    transition: ease-in-out 0.3s;
+  }
+  
+  #hero-dj .icon-box h3 a:hover {
+    color: #ffc451;
+  }
+  
+  #hero-dj .icon-box:hover {
+    border-color: #ffc451;
+  }
+  
+  @media (min-width: 1024px) {
+    #hero-dj {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero-dj {
+      height: auto;
+    }
+  
+    #hero-dj h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  
+    #hero-dj h2 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+
+  /* hero background */
+
+#media-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensure media is behind other content */
+}
+
+.background-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    padding: 20px;
+    /* Adjust padding or other styles as needed for your content */
+    z-index: 1; /* Ensure content is above media */
+}

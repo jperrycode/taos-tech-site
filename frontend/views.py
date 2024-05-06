@@ -102,7 +102,7 @@ class StagePageView(View):
 
 
 class DjPageView(TemplateView):
-    template_name = 'frontend/dj-files/dj_index.html'
+    template_name = 'dj/dj_index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
