@@ -15,28 +15,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = str(os.getenv('APP_SECRET_KEY'))
 
-DEBUG = True
+DEBUG = False
 
 # DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
 DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com', '*']
 ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com', '*']
 
-DEVELOPMENT_MODE = True
+DEVELOPMENT_MODE = False
 
-# ADMINS = []
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_HSTS_SECONDS = 3600
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECURE_BROWSER_XSS_FILTER = True
-# X_FRAME_OPTIONS = 'DENY'
-# SECURE_SSL_REDIRECT = True
-# # Application definition
-#
-# SECURE_HSTS_SECONDS = 100000
+
+ADMINS = []
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_SSL_REDIRECT = True
+# Application definition
+
+SECURE_HSTS_SECONDS = 100000
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -73,10 +74,18 @@ ROOT_URLCONF = 'main.urls'
 #     'music': 'taoshausdj.urls',
 # }
 
+# Define the template directories for each app
+APP_TEMPLATE_DIRS = [
+    os.path.join(BASE_DIR, 'djapp', 'templates'),
+    os.path.join(BASE_DIR, 'frontend', 'templates'),
+
+    # Add more app-specific template directories as needed
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': APP_TEMPLATE_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
