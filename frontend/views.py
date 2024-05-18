@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
 from django.urls import reverse
-from .models import DjServices
+
 
 
 # Create your views here.
