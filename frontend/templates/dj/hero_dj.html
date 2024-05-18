@@ -21,13 +21,13 @@
 
     <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
         {% for bangers in services %}
-      <div class="col-xl-3 col-md-4">
+      <div class="col-xl-3 col-md-4 h-100">
 
-        <div class="icon-box">
-          <i class="ri-store-line"></i>
-          <h3><a href="">{{ bangers.dj_service_name}}</a></h3>
-            <h3><a href="">{{ bangers.dj_service_description }}</a></h3>
-        </div>
+      <div class="dj-icon-box p-4 h-100">
+        <i class="bi bi-vinyl"></i>
+        <h3 class="title"><a href="#">{{ bangers.dj_service_name }}</a></h3>
+        <h3 class="description"><a href="#">{{ bangers.dj_service_description }}</a></h3>
+    </div>
 
       </div>
 {% endfor %}
