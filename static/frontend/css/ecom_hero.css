@@ -1,0 +1,187 @@
+#hero_ecom {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/img-new/bg-hero.jpg") top center;
+    background-size: cover;
+    position: relative;
+  }
+
+  #team_ecom {
+    width: 100%;
+    height: 140vh;
+    background: url("../img/img-new/bg-hero.jpg") top center;
+    background-size: cover;
+    position: relative;
+  }
+  #container-success {
+    width: 100%;
+    height: 100vh;
+    margin-top: 90px;
+  }
+
+  
+  #hero_ecom:before, #team_ecom:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  #hero_ecom .container, #team_ecom .container {
+    position: relative;
+    padding-top: 74px;
+    text-align: center;
+  }
+  
+  #hero_ecom h1, #team_ecom h1 {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #hero_ecom h1 span, #team_ecom h1 span {
+    color: #ffc451;
+  }
+  
+  #hero_ecom h2, #team_ecom h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0 0 0;
+    font-size: 24px;
+  }
+  
+  #hero_ecom .icon-box {
+    padding: 30px 20px;
+    transition: ease-in-out 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 100%;
+    text-align: center;
+  }
+  
+  #hero_ecom .icon-box i {
+    font-size: 32px;
+    line-height: 1;
+    color: #ffc451;
+  }
+  
+  #hero_ecom .icon-box h3 {
+    font-weight: 700;
+    margin: 10px 0 0 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #hero_ecom .icon-box h3 a {
+    color: #fff;
+    transition: ease-in-out 0.3s;
+  }
+  
+  #hero_ecom .icon-box h3 a:hover {
+    color: #ffc451;
+  }
+  
+  #hero_ecom .icon-box:hover {
+    border-color: #ffc451;
+  }
+  
+  @media (min-width: 1024px) {
+    #hero_ecom {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero_ecom {
+      height: auto;
+    }
+  
+    #hero_ecom h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  
+    #hero_ecom h2 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  /* nav */
+
+  @media (max-width: 991px) {
+    .navbar-scroll {
+      background-color: transparent;
+    }
+       
+    .navbar-scroll .navbar-brand,
+    .navbar-scroll .nav-link,
+    .navbar-scroll .fa-bars {
+      color: #ffffff !important;
+    }         
+  }
+  
+  .navbar-brand {
+    letter-spacing: 3px;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .navbar-scroll .navbar-brand,
+  .navbar-scroll .nav-link,
+  .navbar-scroll .fa-bars {
+    color: #fff;
+  }
+  
+  .navbar-scroll {
+    box-shadow: none;
+  }
+  
+  .navbar-scrolled {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar-scrolled .navbar-brand,
+  .navbar-scrolled .nav-link,
+  .navbar-scrolled .fa-bars {
+    color: #4f4f4f;
+  }
+  
+  .navbar-scrolled {
+    background-color: #fff;
+  }
+  
+  @media (max-width: 450px) {
+    #intro {
+      height: 950px !important;
+    }
+  }
+  
+  @media (min-width: 550px) and (max-width: 750px) {
+    #intro {
+      height: 1100px !important;
+    }
+  }
+  
+  @media (min-width: 800px) and (max-width: 990px) {
+    #intro {
+      height: 600px !important;
+    }
+  }
+  
+  .display-1 {
+    font-weight: 500 !important;
+    letter-spacing: 40px;
+  }
+  
+  @media (min-width: 1600px) {
+    .display-1 {
+      font-size: 10rem;
+    }
+  }
+

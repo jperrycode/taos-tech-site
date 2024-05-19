@@ -1,0 +1,43 @@
+{% extends 'dj/dj-base.html' %}
+{% load static %}
+{% block title %}This Justin - Taos Haus
+{% endblock %}
+
+{% block main-body %}
+  <!-- ======= Hero Section ======= -->
+  <div id="media-container">
+    <img src="{% static 'dj/dj/justin_chicken_finger.jpg' %}" class="background-media">
+    <img src="{% static 'dj/dj/justin_sunset.jpg' %}" class="background-media">
+    <video src="{% static 'dj/dj/justin_dj.MOV' %}" class="background-media" autoplay muted loop></video>
+    <video src="{% static 'dj/dj/outside_ski_sf.MOV' %}" class="background-media" autoplay muted loop></video>
+    <video src="{% static 'dj/dj/dallee_bangers.MP4' %}" class="background-media" autoplay muted loop></video>
+    <!-- Add more images and videos as needed -->
+  </div>
+
+  <main id="main">
+    <!-- ======= Hero Section ======= -->
+    <section id="hero-dj" class="d-flex align-items-center justify-content-center">
+      {% include 'dj/hero_dj.html' %}
+    </section><!-- End Hero -->
+
+     <section id="about-dj" class="d-flex align-items-center justify-content-center">
+      {% include 'dj/dj_about_section.html' %}
+    </section><!-- End Hero -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact-dj" class="contact pb-5 mb-3">
+      {% include 'frontend/dj-files/contact_calendly_dj.html' %}
+    </section><!-- End Contact Section -->
+  </main>
+{% endblock %}
+
+
+
+
+
+    
+
+
+
+
+

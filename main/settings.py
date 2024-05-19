@@ -5,28 +5,21 @@ import sys
 import dj_database_url
 from django.contrib.messages import constants as messages
 
-
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 SECRET_KEY = str(os.getenv('APP_SECRET_KEY'))
 
-     
 DEBUG = False
 
 # DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
-DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com']
-ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com']
+DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com', '*']
+ALLOWED_HOSTS = ['.herokuapp.com', '.taostechsolutions.com', '*']
 
 DEVELOPMENT_MODE = False
 
@@ -40,11 +33,11 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY' 
+X_FRAME_OPTIONS = 'DENY'
 SECURE_SSL_REDIRECT = True
 # Application definition
 
-SECURE_HSTS_SECONDS = 100000 
+SECURE_HSTS_SECONDS = 100000
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,12 +50,14 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_htmx',
     'django_ajax',
+    'djapp',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'subdomains.middleware.SubdomainURLRoutingMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -73,10 +68,24 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'main.urls'
 
+# SUBDOMAIN_URLCONFS = {
+#     None: 'main.urls',  # no subdomain, e.g. ``example.com``
+#     'tech': 'frontend.urls',
+#     'music': 'taoshausdj.urls',
+# }
+
+# Define the template directories for each app
+APP_TEMPLATE_DIRS = [
+    os.path.join(BASE_DIR, 'djapp', 'templates'),
+    os.path.join(BASE_DIR, 'frontend', 'templates'),
+
+    # Add more app-specific template directories as needed
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': APP_TEMPLATE_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,11 +102,11 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 #messages 
 MESSAGE_TAGS = {
-        messages.DEBUG: 'alert-secondary',
-        messages.INFO: 'alert-info',
-        messages.SUCCESS: 'alert-success',
-        messages.WARNING: 'alert-warning',
-        messages.ERROR: 'alert-danger',
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
 }
 
 # Database
@@ -106,20 +115,16 @@ MESSAGE_TAGS = {
 # To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
 DATABASE_URL = str(os.getenv('DATABASE_URL'))
 
-
-
 DATABASES = {
-          'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME':str(os.getenv('DB_NAME')),
-    'USER': str(os.getenv('DB_USER')),
-    'PASSWORD': str(os.getenv('DB_PASSWORD')),
-    'HOST': str(os.getenv('DB_HOST')),
-    'PORT': os.getenv('DB_PORT'),
-  },
-    }
-
-
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': str(os.getenv('DB_NAME')),
+        'USER': str(os.getenv('DB_USER')),
+        'PASSWORD': str(os.getenv('DB_PASSWORD')),
+        'HOST': str(os.getenv('DB_HOST')),
+        'PORT': os.getenv('DB_PORT'),
+    },
+}
 
 DATABASES['default'] = dj_database_url.config(
     default=str(os.getenv('DATABASE_URL')),
@@ -144,7 +149,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -157,20 +161,19 @@ USE_I18N = True
 
 USE_TZ = True
 
-DATETIME_FORMAT="m-d-Y || H:i"
+DATETIME_FORMAT = "m-d-Y || H:i"
 USE_L10N = False
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # SMTP SETTINGS
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
