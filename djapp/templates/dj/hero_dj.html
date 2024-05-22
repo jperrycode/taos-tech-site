@@ -25,13 +25,15 @@
 
       <div class="dj-icon-box p-4 h-100">
         <i class="bi bi-vinyl"></i>
-        <h3 class="title"><a href="#">{{ bangers.dj_service_name }}</a></h3>
-        <h3 class="description"><a href="#">{{ bangers.dj_service_description }}</a></h3>
+        <h3 class="title element-txt-shad"><a href="#">{{ bangers.dj_service_name }}</a></h3>
+        <h3 class="description element-txt-shad"><a href="#">{{ bangers.dj_service_description }}</a></h3>
     </div>
 
       </div>
 {% endfor %}
-<h3 class="text-light">With so much more to offer, please reach out!  </h3>
+<h3 class="text-light element-txt-shad">With so much more to offer, please reach out!  </h3>
+    <a href="{% url 'review-dj' %}" class="btn btn-danger element-txt-shad w-25">Taos Haus reviews say it all!  </a>
+
     </div>
 
 

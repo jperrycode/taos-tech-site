@@ -1,0 +1,137 @@
+{% load static %}
+<div class="row">
+    <div class="col-12 text-center">
+        <p class="fs-4 element-txt-shad fw-bold text-light">Thank you for taking the time to leave us a review!</p>
+    </div>
+</div>
+
+<div class="row px-4">
+    <div class="col-xl-3 col-lg-2"></div>
+    <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
+        <form method="POST" action="/leave-review/submit/" role="form" class="contact-text-block bg-opacity-50" id="review-form">
+        {% csrf_token %}
+
+        <div class="row mb-3">
+            <div class="form-group">
+                {{ review_form.reviewer_name.errors }}
+                {{ review_form.reviewer_name }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="form-group">
+                {{ review_form.date_of_event.errors }}
+                {{ review_form.date_of_event }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="form-group">
+                {{ review_form.review_event_type.errors }}
+                {{ review_form.review_event_type }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="form-group">
+                {{ review_form.event_city.errors }}
+                {{ review_form.event_city }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="form-group w-50 mx-auto">
+                {{ review_form.star_rating.errors }}
+                <select class="form-select" id="{{ review_form.star_rating.id_for_label }}" name="{{ review_form.star_rating.name }}">
+                    <option value="" selected>How would you rate the DJ?</option>
+                    {% for value, label in review_form.star_rating.field.choices %}
+                        <option value="{{ value }}" {% if review_form.star_rating.value == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="row mb-3">
+            <div class="form-group">
+                {{ review_form.rating_message_front.errors }}
+                {{ review_form.rating_message_front }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="form-group">
+                {{ review_form.rating_message_dj.errors }}
+                {{ review_form.rating_message_dj }}
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+    </form>
+        <div id="spinner-block-id" class="spinner-block d-none h-100 w-100 d-flex justify-content-center align-items-center">
+            <div id="loading-spinner" class="loading-spinner"></div>
+        </div>
+        <!-- Your success block HTML -->
+        <div id="success-block" class="h-100 text-center d-none">
+            <p class="p-5">Thank you for your valued feedback!</p>
+            <p class="p-2">We look forward to seeing you again!</p>
+            <p>Call Us Here: <a class="text-danger" href="tel:9087665152">908.766.5152</a></p>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-2"></div>
+</div>
+
+<!-- Loading spinner -->
+<!-- Loading Spinner -->
+<div id="spinner-block-id" class="spinner-overlay d-none">
+    <div id="loading-spinner" class="loading-spinner"></div>
+</div>
+
+<!-- Form Submitted Message -->
+<div id="spinner-done" class="spinner-overlay d-none">
+    <div id="loading-done" class="loading-done">Form Submitted successfully</div>
+</div>
+
+<!--<style>-->
+<!--/* Ensure the parent container takes up the full viewport */-->
+<!--.spinner-overlay {-->
+<!--    position: fixed;-->
+<!--    top: 0;-->
+<!--    left: 0;-->
+<!--    width: 100%;-->
+<!--    height: 100%;-->
+<!--    display: flex;-->
+<!--    justify-content: center;-->
+<!--    align-items: center;-->
+<!--    z-index: 1000; /* Ensure it's on top of other content */-->
+<!--    background-color: rgba(255, 255, 255, 0.5); /* Optional: Add a semi-transparent background */-->
+<!--}-->
+
+<!--/* Style for the loading spinner */-->
+<!--.loading-spinner {-->
+<!--    width: 50px;-->
+<!--    height: 50px;-->
+<!--    border: 5px solid #f3f3f3; /* Light gray */-->
+<!--    border-top: 5px solid #3498db; /* Blue */-->
+<!--    border-radius: 50%;-->
+<!--    animation: spin 1s linear infinite;-->
+<!--}-->
+
+<!--/* Style for the form submitted message */-->
+<!--.loading-done {-->
+<!--    font-size: 1.25em;-->
+<!--    text-align: center;-->
+<!--    color: #333; /* Adjust the text color as needed */-->
+<!--    font-weight: bold;-->
+<!--    -->
+<!--}-->
+
+<!--/* Animation for the spinner */-->
+<!--@keyframes spin {-->
+<!--    0% { transform: rotate(0deg); }-->
+<!--    100% { transform: rotate(360deg); }-->
+<!--}-->
+<!--</style>-->

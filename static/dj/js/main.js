@@ -337,3 +337,25 @@ document.addEventListener('DOMContentLoaded', function () {
     changeMedia();
 });
 
+function review_form_view() {
+    const heroDj = document.getElementById('hero-dj');
+    const aboutDj = document.getElementById('about-dj');
+
+    if (aboutDj.classList.contains('d-none')) {
+        // Show aboutDj and hide heroDj
+        heroDj.classList.remove('show');
+        aboutDj.classList.remove('d-none');
+        setTimeout(() => {
+            aboutDj.classList.add('show');
+            heroDj.classList.add('d-none');
+        }, 10); // Small delay to ensure class application
+    } else {
+        // Show heroDj and hide aboutDj
+        aboutDj.classList.remove('show');
+        heroDj.classList.remove('d-none');
+        setTimeout(() => {
+            heroDj.classList.add('show');
+            aboutDj.classList.add('d-none');
+        }, 10); // Small delay to ensure class application
+    }
+}

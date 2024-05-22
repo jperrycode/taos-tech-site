@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     "phonenumber_field",
     "django_htmx",
     "django_ajax",
-    'taoshausdj',
+    'djapp',
 ]
 
 MIDDLEWARE = [
