@@ -16,12 +16,20 @@ class DjServices(models.Model):
         return self.dj_service_name
 
 
+
+class StarRatingIntegerChoices(models.IntegerChoices):
+    ONE = 1, 'One Star'
+    TWO = 2, 'Two Stars'
+    THREE = 3, 'Three Stars'
+    FOUR = 4, 'Four Stars'
+    FIVE = 5, 'Five Stars'
 class Reviews(models.Model):
     reviewer_name = models.CharField(max_length=250, blank=True, null=True)
     date_of_review = models.DateField(auto_now_add=True)
     review_event_type = models.CharField(max_length=20, blank=True, null=True)
     date_of_event = models.DateField(blank=True, null=True)
     event_city = models.CharField(max_length=250, blank=True, null=True)
+    star_rating = models.PositiveSmallIntegerField(choices=StarRatingIntegerChoices.choices)
 
     class Meta:
         verbose_name = "Review"
