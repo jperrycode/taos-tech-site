@@ -1,0 +1,25 @@
+{% extends 'dj/dj-base.html' %}
+{% load static %}
+{% block title %}This Justin - Taos Haus
+{% endblock %}
+
+{% block main-body %}
+  <!-- ======= Hero Section ======= -->
+
+
+  <main id="main">
+    <!-- ======= Hero Section ======= -->
+    <section id="hero-dj" class="d-flex align-items-center justify-content-center">
+      {% include 'dj/hero_dj.html' %}
+    </section><!-- End Hero -->
+
+     <section id="about-dj" class="d-flex align-items-center justify-content-center">
+      {% include 'dj/dj_about_section.html' %}
+    </section><!-- End Hero -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact-dj" class="contact pb-5 mb-3">
+      {% include 'frontend/dj-files/contact_calendly_dj.html' %}
+    </section><!-- End Contact Section -->
+  </main>
+{% endblock %}
