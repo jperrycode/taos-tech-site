@@ -9,6 +9,7 @@ import os
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, DetailView
 from django.views import View
+from django.http import JsonResponse
 
 # Create your views here.
 class DjPageView(TemplateView):
