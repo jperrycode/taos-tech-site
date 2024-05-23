@@ -136,45 +136,50 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#submit-button').on('click', function(e) {
-                e.preventDefault(); // Prevent default form submission
-                var $form = $('#review-form');
-                submitForm($form);
-            });
+       $(document).ready(function() {
+    $('#submit-button').on('click', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        var $form = $('#review-form');
+        submitForm($form);
+    });
 
-            function submitForm($form) {
-                console.log('Submitting form...');
-                $('#spinner-block-id').removeClass('d-none');
-                $.ajax({
-                    type: 'POST',
-                    url: $form.attr('action'),
-                    data: $form.serialize(),
-                    success: function(response) {
-                        console.log('Form submission successful');
-                        if (response.success) {
-                            $('#review-form').addClass('d-none');
-                            $('#spinner-block-id').addClass('d-none');
-                            $('#success-modal').modal('show');
-                        } else {
-                            console.log('Error response received:');
-                            console.log(response.error_message);
-                            console.log(response.form_errors);
-                            $('#spinner-block-id').addClass('d-none');
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Error occurred during form submission:');
-                        console.error(xhr.responseText);
-                        $('#spinner-block-id').addClass('d-none');
-                    }
-                });
+    function submitForm($form) {
+        console.log('Submitting form...');
+        $('#spinner-block-id').removeClass('d-none');
+        $.ajax({
+            type: 'POST',
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            success: function(response) {
+                console.log('Form submission successful');
+                if (response.success) {
+                    $('#review-form').addClass('d-none');
+                    $('#spinner-block-id').addClass('d-none');
+                    $('#success-block').removeClass('d-none');
+                    $('#after-success').removeClass('d-none');
+                    // Adjust the delay time as needed
+                } else {
+                    console.log('Error response received:');
+                    console.log(response.error_message);
+                    console.log(response.form_errors);
+                    $('#spinner-block-id').addClass('d-none');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error occurred during form submission:');
+                console.error(xhr.responseText);
+                $('#spinner-block-id').addClass('d-none');
             }
-
-            $('#success-modal').on('show.bs.modal', function () {
-                $('.modal-backdrop').addClass('custom-backdrop');
-            });
         });
+    }
+
+    $('#success-block').on('hidden.bs.modal', function() {
+    $('#spinner-done').removeClass('d-none');
+        $('#after-success').removeClass('d-none');
+        $('#spinner-done').addClass('d-none');
+
+    });
+});
     </script>
 <!--
 <script>

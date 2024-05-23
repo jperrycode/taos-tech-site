@@ -356,7 +356,9 @@ background: linear-gradient(45deg, rgba(15,238,226,1) 29%, rgba(29,27,27,0.98482
     opacity: 0;
 }
 
-
+.modal-backdrop {
+display: none !important;
+}
    .spinner-overlay {
             position: fixed;
             top: 0;

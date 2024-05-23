@@ -362,48 +362,27 @@ function review_form_view() {
 
 
 
- $(document).ready(function() {
-            $('#submit-button').on('click', function(e) {
-                e.preventDefault(); // Prevent default form submission
-                var $form = $('#review-form');
-                submitForm($form);
-            });
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#review-form');
 
-            function submitForm($form) {
-                console.log('Submitting form...');
-                $('#spinner-block-id').removeClass('d-none');
-                $.ajax({
-                    type: 'POST',
-                    url: $form.attr('action'),
-                    data: $form.serialize(),
-                    success: function(response) {
-                        console.log('Form submission successful');
-                        if (response.success) {
-                            $('#review-form').addClass('d-none');
-                            $('#spinner-block-id').addClass('d-none');
-                            $('#success-block').removeClass('d-none');
-                            setTimeout(function() {
-                                window.location.href = '/first-visit/';
-                            }, 1000); // Adjust the delay time as needed
-                        } else {
-                            console.log('Error response received:');
-                            console.log(response.error_message);
-                            console.log(response.form_errors);
-                            $('#spinner-block-id').addClass('d-none');
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Error occurred during form submission:');
-                        console.error(xhr.responseText);
-                        $('#spinner-block-id').addClass('d-none');
-                    }
-                });
-            }
+    form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
 
-            $('#success-block').on('hidden.bs.modal', function() {
-                $('#spinner-done').removeClass('d-none');
-                setTimeout(function() {
-                    window.location.href = '/first-visit/';
-                }, 1000); // Adjust the delay time as needed
-            });
-        });
+        form.classList.add('was-validated');
+    }, false);
+
+    // Custom validation for star rating select
+    const starRating = document.querySelector('#{{ review_form.star_rating.id_for_label }}');
+    starRating.addEventListener('change', function () {
+        if (starRating.value === "") {
+            starRating.setCustomValidity("Please select a star rating.");
+        } else {
+            starRating.setCustomValidity("");
+        }
+    });
+});
+
+
