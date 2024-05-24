@@ -31,7 +31,30 @@
 
 
   </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#review-form');
 
+    form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+    }, false);
+
+    // Custom validation for star rating select
+    const starRating = document.querySelector('#star_rating');
+    starRating.addEventListener('change', function () {
+        if (starRating.value === "") {
+            starRating.setCustomValidity("Please select a star rating.");
+        } else {
+            starRating.setCustomValidity("");
+        }
+    });
+});
+</script>
 
 
 

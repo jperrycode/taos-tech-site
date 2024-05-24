@@ -362,27 +362,6 @@ function review_form_view() {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('#review-form');
 
-    form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-        }
-
-        form.classList.add('was-validated');
-    }, false);
-
-    // Custom validation for star rating select
-    const starRating = document.querySelector('#{{ review_form.star_rating.id_for_label }}');
-    starRating.addEventListener('change', function () {
-        if (starRating.value === "") {
-            starRating.setCustomValidity("Please select a star rating.");
-        } else {
-            starRating.setCustomValidity("");
-        }
-    });
-});
 
 

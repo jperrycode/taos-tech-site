@@ -1,8 +1,7 @@
 from django import forms
 from .models import Reviews, StarRatingIntegerChoices
 
-from django import forms
-from .models import Reviews
+
 
 class ReviewForm(forms.ModelForm):
     class Meta:
@@ -46,7 +45,7 @@ class ReviewForm(forms.ModelForm):
             }),
             'rating_message_front': forms.Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'How did we do?',
+                'placeholder': 'How did we Do?',
                 'id': 'rating_message_front',
                 'rows': 3,
                 'required': 'required'
@@ -59,4 +58,11 @@ class ReviewForm(forms.ModelForm):
                 'required': 'required'
             }),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs.update({'class': 'form-control'})
+        self.fields['star_rating'].widget.attrs.update({'class': 'form-select', 'required': 'required'})
+
 
