@@ -51,13 +51,14 @@ INSTALLED_APPS = [
     'django_htmx',
     'django_ajax',
     'djapp',
+    'django_subdomains',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'subdomains.middleware.SubdomainURLRoutingMiddleware',
+    'subdomains.middleware.SubdomainURLRoutingMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -67,6 +68,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'main.urls'
+SUBDOMAIN_URLCONFS = {
+    None: 'your_project.urls',  # no subdomain, serves the main site
+    'www': 'your_project.urls',  # www subdomain
+    'blog': 'your_project.blog_urls',  # blog subdomain
+    'shop': 'your_project.shop_urls',  # shop subdomain
+}
 
 # SUBDOMAIN_URLCONFS = {
 #     None: 'main.urls',  # no subdomain, e.g. ``example.com``
