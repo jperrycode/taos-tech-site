@@ -395,7 +395,24 @@ transition: all 0.5s ease-in-out;
 }
 .review-hover:hover {
 scale: 1.15;
-background: rgba(255, 25, 25, 0.3) !important;
+background: rgb(174,226,238);
+background: radial-gradient(circle, rgba(174,226,238,1) 0%, rgba(255,242,0,0.9988328094909839) 100%);
 border: 3px double rgba(255, 255, 255, 0.1);
 border-radius: 20%;
 }
+
+
+
+        /* Custom CSS for mobile navigation */
+        .mobile-nav {
+            display: none;
+        }
+
+        @media (max-width: 500.98px) {
+            .mobile-nav {
+                display: block;
+            }
+            .desktop-nav {
+                display: none;
+            }
+        }

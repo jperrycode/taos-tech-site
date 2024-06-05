@@ -46,7 +46,21 @@
   <link href='{% static "frontend/css/style.css" %}' rel="stylesheet">
 
   <!-- HTMX -->
+    <style>
+        /* Custom CSS for mobile navigation */
+        .mobile-nav {
+            display: none;
+        }
 
+        @media (max-width: 991.98px) {
+            .mobile-nav {
+                display: block;
+            }
+            .desktop-nav {
+                display: none;
+            }
+        }
+    </style>
 
 <style>
 .img-overlay {
@@ -119,6 +133,33 @@ lastScrollTop = scrollTop;
 });
 </script>
   -->
+<script type="text/javascript">
 
+      $(document).ready(function() {
+        var lastScrollTop = 0;
+        $(window).scroll(function(event) {
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop) {
+                // Downscroll code
+                $('.navbar-hide-on-scroll').removeClass('scroll-show').addClass('scroll-hide');
+            } else {
+                // Upscroll code
+                $('.navbar-hide-on-scroll').removeClass('scroll-hide').addClass('scroll-show');
+            }
+            lastScrollTop = st;
+        });
+
+        $('#mobile-navbar-toggler').click(function() {
+            $('#navbarSupportedContentMobile').toggleClass('show');
+        });
+
+        $('.mobile-nav .navbar-nav a').click(function() {
+    $('#navbarSupportedContentMobile').removeClass('show');
+});
+
+$('.desktop-nav .navbar-nav a').click(function() {
+    $('#navbarSupportedContentDesktop').removeClass('show');
+});
+</script>
 
 </body>
