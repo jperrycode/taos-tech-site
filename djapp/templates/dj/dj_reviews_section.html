@@ -17,14 +17,18 @@
         <p class="fst-italic fw-bold mt-5 fs-3 element-txt-shad">
 Joy through Dancing, Music & Banter        </p>
 <div class="row order-1 order-lg-2 text-center" data-aos="fade-left" data-aos-delay="100">
+
         {% for review_item in review %}
-<div class="col-lg-5 col-md-12 col-sm-12 mx-auto review-box m-3 p-5">
+    {% if not review_item.review_pass %}
+    {% else %}
+
+<div class="col-lg-5 col-md-12 col-sm-12 mx-auto review-box bg-transparent m-3 p-5 review-hover">
     <ul class="list-unstyled">
-        <li class="fst-italic fw-bold mt-5 fs-3 element-txt-shad">{{ review_item.reviewer_name }}</li>
-        <li>Review customer name + event city</li>
-        <li>message</li>
-        <li>stars</li>
-        <li>event type</li>
+        <li class="fst-italic fw-bold mt-5 fs-3 element-txt-shad">{{ review_item.reviewer_name }}  -  {{ review_item.event_city }}</li>
+        <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">                    <img src="https://i.ibb.co/ncBS4t4/review-five-stars.png" alt="review-five-stars" border="0" id="stars"></li>
+
+        <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">{{ review_item.rating_message_front }}</li>
+        <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">{{ review_item.date_of_event }}</li>
 
     </ul>
 
@@ -32,6 +36,10 @@ Joy through Dancing, Music & Banter        </p>
         {% if forloop.counter|divisibleby:2 %}
     <div class="w-100 d-md-none"></div>
     {% endif %}
+
+    {% endif %}
+    {% empty %}
+    <div class="row"><h1>No Reviews here, check out google</h1></div>
         {% endfor %}
     </div>
 </div>

@@ -384,3 +384,18 @@ display: none !important;
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+
+.review-hover {
+border-radius: 20%;
+transition: all 0.5s ease-in-out;
+
+
+
+}
+.review-hover:hover {
+scale: 1.15;
+background: rgba(255, 25, 25, 0.3) !important;
+border: 3px double rgba(255, 255, 255, 0.1);
+border-radius: 20%;
+}
