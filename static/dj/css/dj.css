@@ -396,7 +396,7 @@ transition: all 0.5s ease-in-out;
 .review-hover:hover {
 scale: 1.15;
 background: rgb(174,226,238);
-background: radial-gradient(circle, rgba(174,226,238,1) 0%, rgba(255,242,0,0.9988328094909839) 100%);
+background: radial-gradient(circle, rgba(174,226,238,.2) 0%, rgba(255,242,0,0.1) 100%);
 border: 3px double rgba(255, 255, 255, 0.1);
 border-radius: 20%;
 }

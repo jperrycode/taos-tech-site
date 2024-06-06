@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = str(os.getenv('APP_SECRET_KEY'))
 
-DEBUG = True
+DEBUG = False
 
 # DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
 DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', '.taos-haus.com', '*']
@@ -24,18 +24,18 @@ ALLOWED_HOSTS = ['.herokuapp.com', '.taos-haus.com', '*']
 DEVELOPMENT_MODE = False
 
 
-# ADMINS = []
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_HSTS_SECONDS = 3600
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECURE_BROWSER_XSS_FILTER = True
-# X_FRAME_OPTIONS = 'DENY'
-# SECURE_SSL_REDIRECT = True
-# # Application definition
+ADMINS = []
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_SSL_REDIRECT = True
+# Application definition
 
 SECURE_HSTS_SECONDS = 100000
 
@@ -109,10 +109,6 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
 DATABASE_URL = str(os.getenv('DATABASE_URL'))
 
 DATABASES = {
@@ -131,8 +127,7 @@ DATABASES['default'] = dj_database_url.config(
     conn_max_age=600,
     conn_health_checks=True,
 )
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -149,8 +144,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 PHONENUMBER_DEFAULT_REGION = 'US'
@@ -164,8 +158,7 @@ USE_TZ = True
 DATETIME_FORMAT = "m-d-Y || H:i"
 USE_L10N = False
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
