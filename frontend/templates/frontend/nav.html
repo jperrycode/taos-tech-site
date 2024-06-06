@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-hide-on-scroll fixed-top mobile-nav">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">Taos Haus Solutions</a>
-        <button class="navbar-toggler" type="button" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentMobile">
+        <a class="navbar-brand flashing-effect fs-4 element-txt-shad" href="{% url 'home' %}">Taos Haus Tech Solutions</a>
+        <button class="navbar-toggler btn btn-danger bg-danger" type="button" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentMobile">
             <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse bg-dark" id="navbarSupportedContentMobile">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContentMobile">
+            <ul class="navbar-nav fs-3 element-txt-shad me-auto mb-2 mb-lg-0 text-center">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}#about">About</a>
                 </li>
@@ -21,27 +21,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contact_page' %}">Contact Justin</a>
                 </li>
-            </ul>
-            <ul class="navbar-nav d-flex flex-row">
-                <li class="nav-item me-3 me-lg-0">
+                  <li class="nav-item">
                     <a class="nav-link" href="{% url 'this-justin' %}">Taos Haus Thumps</a>
                 </li>
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="https://www.instagram.com/taos_haus/">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                </li>
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="https://github.com/jperrycode">
-                        <i class="bi bi-github"></i>
-                    </a>
-                </li>
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="https://www.linkedin.com/in/justinperrydeveloper/">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                </li>
             </ul>
+            <div class="d-flex justify-content-center">
+        <ul class="navbar-nav d-flex flex-row element-txt-shad">
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.instagram.com/taos_haus/">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/jperrycode">
+                    <i class="bi bi-github"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.linkedin.com/in/justinperrydeveloper/">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
         </div>
     </div>
 </nav>

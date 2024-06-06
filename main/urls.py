@@ -8,7 +8,7 @@ admin.site.index_title = 'THTS Data'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('frontend.urls')),
+    path('tech-solutions/', include('frontend.urls')),
     path('dj/', include('djapp.urls')),
 
 ]
