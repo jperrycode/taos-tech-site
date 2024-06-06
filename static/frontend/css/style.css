@@ -1,14 +1,4 @@
-/**
-* Template Name: Gp
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -210,7 +200,7 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
   color: #fff;
   white-space: nowrap;
