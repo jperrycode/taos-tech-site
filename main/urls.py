@@ -8,7 +8,7 @@ admin.site.site_header = 'Taos Haus Tech'
 admin.site.index_title = 'THTS Data'
 
 urlpatterns = [
-    path('', RedirectView.as_view(permanent=True, url='tech-solutions/')),
+    path('/', RedirectView.as_view(url='tech-solutions/')),
     path('admin/', admin.site.urls),
     path('tech-solutions/', include('frontend.urls')),
     path('dj/', include('djapp.urls')),
