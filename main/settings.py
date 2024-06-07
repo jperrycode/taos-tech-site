@@ -18,8 +18,8 @@ SECRET_KEY = str(os.getenv('APP_SECRET_KEY'))
 DEBUG = False
 
 # DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
-DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', '.taos-haus.com', '.taostechsolutions.com']
-ALLOWED_HOSTS = ['.herokuapp.com', '.taos-haus.com', '.taostechsolutions.com']
+DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', 'taos-haus.com', '.taostechsolutions.com']
+ALLOWED_HOSTS = ['.herokuapp.com', 'taos-haus.com', '.taostechsolutions.com']
 
 DEVELOPMENT_MODE = False
 
@@ -34,7 +34,7 @@ SECURE_HSTS_PRELOAD = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = not DEBUG
 # Application definition
 
 SECURE_HSTS_SECONDS = 100000
@@ -57,7 +57,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'subdomains.middleware.SubdomainURLRoutingMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
