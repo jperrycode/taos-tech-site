@@ -15,11 +15,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = str(os.getenv('APP_SECRET_KEY'))
 
-DEBUG = False
+DEBUG = True
 
 # DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS")
-DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', 'taos-haus.com', '.taostechsolutions.com']
-ALLOWED_HOSTS = ['.herokuapp.com', 'taos-haus.com', '.taostechsolutions.com']
+DJANGO_ALLOWED_HOSTS = ['.herokuapp.com', 'taos-haus.com', '.taostechsolutions.com', '127.0.0.1']
+ALLOWED_HOSTS = ['.herokuapp.com', 'taos-haus.com', '.taostechsolutions.com', '127.0.0.1']
 
 DEVELOPMENT_MODE = False
 

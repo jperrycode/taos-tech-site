@@ -1651,3 +1651,9 @@ background-color: rgba(217, 255, 0, 0.472);
 
       }
 
+
+    #unique-navbar-tech.hidden {
+        top: -100px; /* Adjust this value based on the navbar height */
+        transition: top 0.3s;
+    }
+

@@ -42,42 +42,43 @@
     </div>
 </nav>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top desktop-nav">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'frontend/img/dj/logo-gradient-stroke.png' %}" class="img-fluid" style="max-width: 100px;" alt="Logo">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContentDesktop">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'this-justin' %}">Taos Haus Thumps</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about-dj">Mixes and Music</a>
-                    </li>
-                    <!-- Add more menu items as needed -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact-dj">Contact Justin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'review-dj' %}">Leave a Review</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Taos Haus Tech</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.instagram.com/taos_haus/">
-                            <i class="bi bi-instagram text-danger" style="font-size:30px"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://soundcloud.com/taos-haus-bumps">
-                            <i class="fa fa-soundcloud text-danger" style="font-size:36px"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Desktop Navigation -->
+<nav id="unique-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top desktop-nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'frontend/img/dj/logo-gradient-stroke.png' %}" class="img-fluid" style="max-width: 100px;" alt="Logo">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContentDesktop">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'this-justin' %}">Taos Haus Thumps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-dj">Mixes and Music</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact-dj">Contact Justin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'review-dj' %}">Leave a Review</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Taos Haus Tech</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com/taos_haus/">
+                        <i class="bi bi-instagram text-danger" style="font-size:30px"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://soundcloud.com/taos-haus-bumps">
+                        <i class="fa fa-soundcloud text-danger" style="font-size:36px"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
