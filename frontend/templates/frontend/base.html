@@ -114,6 +114,7 @@
   <script src='{% static "frontend/js/main.js" %}'></script>
   <script src="{% static 'frontend/js/htmx.min.js' %}" defer></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 <!--
@@ -160,6 +161,17 @@ lastScrollTop = scrollTop;
 $('.desktop-nav .navbar-nav a').click(function() {
     $('#navbarSupportedContentDesktop').removeClass('show');
 });
+
+
+               $(document).ready(function(){
+            $('.icon-box').hover(function(){
+                $(this).find('.default-content').css('opacity', '0');
+                $(this).find('.hover-content').css('opacity', '1');
+            }, function(){
+                $(this).find('.default-content').css('opacity', '1');
+                $(this).find('.hover-content').css('opacity', '0');
+            });
+        });
 </script>
 
 </body>

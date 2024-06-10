@@ -199,8 +199,8 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  font-size: 15px;
+  padding:0px;
+
   font-weight: 600;
   color: #fff;
   white-space: nowrap;
@@ -480,6 +480,8 @@ h6 {
 
 #hero .icon-box:hover {
   border-color: #ffc451;
+  background: rgb(237,7,7);
+background: linear-gradient(4deg, rgba(237,7,7,1) 13%, rgba(29,30,16,1) 46%, rgba(125,29,160,1) 75%);
 }
 
 @media (min-width: 1024px) {
@@ -704,6 +706,8 @@ section {
   border-color: #fff;
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
+  background: rgb(237,7,7);
+background: linear-gradient(4deg, rgba(237,7,7,.1) 13%, rgba(29,30,16,.1) 46%, rgba(125,29,160,.1) 75%);
 }
 
 /*--------------------------------------------------------------
@@ -1669,7 +1673,77 @@ background-color: rgba(217, 255, 0, 0.472);
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
 }
-#navbarSupportedContentMobile {
- background-image: linear-gradient(to right top, #00e9ff, #00f6e8, #00feba, #57ff78, #b0ff00);
+#navbarSupportedContentMobile ul li {
+font-size: 25px !important;
 }
+
+#navbarSupportedContentMobile {
+background: rgb(237,7,7);
+background: linear-gradient(4deg, rgba(237,7,7,1) 13%, rgba(29,30,16,1) 46%, rgba(125,29,160,1) 75%);
+}
+
+       .icon-box {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+
+            transition: transform 0.3s ease;
+        }
+
+        .default-content, .hover-content {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .default-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hover-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 15px;
+            opacity: 0;
+            visibility: hidden;
+            padding: 20px; /* Ensure padding for content */
+            overflow-y: auto; /* Add scroll if content overflows */
+        }
+
+        .icon-box:hover .default-content {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .icon-box:hover .hover-content {
+            opacity: 1;
+            visibility: visible;
+            font-size: 18px;
+ text-shadow: 0px 3px 3px rgba(7, 7, 7, 0.5);
+ font-weight: bold;
+ text-align: left !important;
+        }
+
+        @media (max-width: 767px) {
+            .icon-box {
+                padding: 10px;
+            }
+
+            .icon-box p, .icon-box h4, .icon-box ul li {
+                font-size: 14px; /* Adjust font size as needed */
+            }
+
+            .icon-box ul {
+                padding-left: 20px; /* Adjust padding for better spacing */
+            }
+        }
 
