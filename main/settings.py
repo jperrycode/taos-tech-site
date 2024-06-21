@@ -5,8 +5,13 @@ import sys
 import dj_database_url
 from django.contrib.messages import constants as messages
 
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+
+ENVIRONMENT = str(os.getenv('ENVIRONMENT', 'development'))
+
+if ENVIRONMENT in ['development', 'staging']:
+    from dotenv import load_dotenv
+    dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+    load_dotenv(dotenv_path)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,18 +28,18 @@ ALLOWED_HOSTS = ['.herokuapp.com', 'taos-haus.com', '.taostechsolutions.com', '1
 
 DEVELOPMENT_MODE = False
 
-
-ADMINS = []
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_HSTS_SECONDS = 3600
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'
-SECURE_SSL_REDIRECT = not DEBUG
+if ENVIRONMENT == 'production':
+    ADMINS = []
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 3600
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_BROWSER_XSS_FILTER = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_SSL_REDIRECT = not DEBUG
 # Application definition
 
 SECURE_HSTS_SECONDS = 100000
@@ -67,11 +72,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'main.urls'
 
-# SUBDOMAIN_URLCONFS = {
-#     None: 'main.urls',  # no subdomain, e.g. ``example.com``
-#     'tech': 'frontend.urls',
-#     'music': 'taoshausdj.urls',
-# }
+
 
 # Define the template directories for each app
 APP_TEMPLATE_DIRS = [
@@ -99,7 +100,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
-#messages 
+#messages
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-secondary',
     messages.INFO: 'alert-info',
