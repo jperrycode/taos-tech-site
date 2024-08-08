@@ -1,60 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-hide-on-scroll fixed-top mobile-nav">
+<nav class="navbar navbar-expand-lg ps-4 pt-3 navbar-hide-on-scroll fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand flashing-effect fs-5 element-txt-shad" href="{% url 'home' %}">Taos Haus Tech Solutions</a>
-        <button class="navbar-toggler btn btn-danger bg-danger" type="button" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentMobile">
+        <!-- Brand -->
+        <a class="navbar-brand flashing-effect fs-5 element-txt-shad" href="{% url 'home' %}">
+            Taos Haus Tech Solutions
+        </a>
+
+        <!-- Toggler button for mobile view -->
+        <button class="navbar-toggler btn btn-danger bg-danger" type="button" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse border rounded-2" id="navbarSupportedContentMobile">
-            <ul class="navbar-nav fs-2 element-txt-shad me-auto mb-2 mb-lg-0 text-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'ecom' %}">E-commerce Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'web' %}">Website Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'team' %}">The Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact_page' %}">Contact Justin</a>
-                </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'this-justin' %}">Taos Haus Thumps</a>
-                </li>
-            </ul>
-            <div class="d-flex justify-content-center">
-        <ul class="navbar-nav d-flex flex-row element-txt-shad">
-            <li class="nav-item">
-                <a class="nav-link" href="https://www.instagram.com/taos_haus/">
-                    <i class="bi bi-instagram"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://github.com/jperrycode">
-                    <i class="bi bi-github"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://www.linkedin.com/in/justinperrydeveloper/">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-        </div>
-    </div>
-</nav>
 
-<!-- Desktop Navigation -->
-<!-- Desktop Navigation -->
-<nav id="unique-navbar-tech" class="navbar navbar-expand-lg navbar-hide-on-scroll fixed-top desktop-nav pt-2">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">Taos Haus Solutions</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContentDesktop">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Collapsible navbar content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navigation Links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}#about">About</a>
                 </li>
@@ -70,22 +29,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contact_page' %}">Contact Justin</a>
                 </li>
-            </ul>
-            <ul class="navbar-nav d-flex flex-row">
-                <li class="nav-item me-3 me-lg-0">
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'this-justin' %}">Taos Haus Thumps</a>
                 </li>
-                <li class="nav-item me-3 me-lg-0">
+            </ul>
+
+            <!-- Social Media Icons -->
+            <ul class="navbar-nav d-flex flex-row">
+                <li class="nav-item">
                     <a class="nav-link" href="https://www.instagram.com/taos_haus/">
                         <i class="bi bi-instagram"></i>
                     </a>
                 </li>
-                <li class="nav-item me-3 me-lg-0">
+                <li class="nav-item">
                     <a class="nav-link" href="https://github.com/jperrycode">
                         <i class="bi bi-github"></i>
                     </a>
                 </li>
-                <li class="nav-item me-3 me-lg-0">
+                <li class="nav-item">
                     <a class="nav-link" href="https://www.linkedin.com/in/justinperrydeveloper/">
                         <i class="bi bi-linkedin"></i>
                     </a>

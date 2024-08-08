@@ -1656,22 +1656,39 @@ background-color: rgba(217, 255, 0, 0.472);
         0px 0px 3px black;   /* Central blur shadow */
 }
 
-       @keyframes screenOnOff {
-            0%, 15%, 25%, 50%, 60%, 70%, 80%, 100% {
-                opacity: 0;
-                  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-                color: linear-gradient(to right top, #00e9ff, #00f6e8, #00feba, #57ff78, #b0ff00) !important;
-            }
-            6%, 11%, 21%, 26%, 31%, 41%, 51%, 56%,  66%, 71%, 76%, 81%,  91%, 96% {
-                opacity: 1;
+@keyframes techGlow {
+    0%, 100% {
+        opacity: 0.5;
+        text-shadow:
+            0 0 5px rgba(0, 255, 255, 0.8),
+            0 0 10px rgba(0, 255, 255, 0.6),
+            0 0 15px rgba(0, 255, 255, 0.4),
+            0 0 20px rgba(0, 255, 255, 0.2);
+    }
+    50% {
+        opacity: 1;
+        text-shadow:
+            0 0 10px rgba(0, 255, 255, 1),
+            0 0 20px rgba(0, 255, 255, 0.8),
+            0 0 30px rgba(0, 255, 255, 0.6),
+            0 0 40px rgba(0, 255, 255, 0.4);
+    }
+}
 
-            }
-        }
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
 
 .flashing-effect {
- animation: screenOnOff 15s infinite;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-
+    color: #00ffff; /* Neon cyan color */
+    animation: techGlow 2s infinite alternate, pulse 1.5s infinite alternate;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 #navbarSupportedContentMobile ul li {
 font-size: 25px !important;
