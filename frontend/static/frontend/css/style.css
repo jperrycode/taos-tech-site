@@ -12,6 +12,11 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+    width: 100%;
+  height: 100vh;
+  background: url("../img/img-new/bg-hero.jpg") top center;
+  background-size: cover;
+  position: relative;
  
 }
 
@@ -1650,4 +1655,10 @@ background-color: rgba(217, 255, 0, 0.472);
         animation: gradientMove 5s linear infinite alternate-reverse; 
 
       }
+
+
+    #unique-navbar-tech.hidden {
+        top: -100px; /* Adjust this value based on the navbar height */
+        transition: top 0.3s;
+    }
 

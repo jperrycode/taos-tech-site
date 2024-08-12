@@ -29,7 +29,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/6C2Xb9A2/6Rd5D7WSQlyxj9E3R2M/Q7yZVcsJp" crossorigin="anonymous">
   <!-- Vendor CSS Files -->
   <link href='{% static "vendor/aos/aos.css" %}' rel="stylesheet">
   <link href='{% static "vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
@@ -49,6 +49,8 @@
 
 
 <style>
+  body {
+  background:black;}
 .img-overlay {
   position: relative;
 }
@@ -67,9 +69,67 @@
 
 
 </style>
+      <style>
+        .spinner-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+        .loading-spinner {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .custom-backdrop {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+                  .mobile-nav {
+            display: none;
+        }
+
+        @media (max-width: 500.98px) {
+            .mobile-nav {
+                display: block;
+            }
+            .desktop-nav {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
+<div id="media-container">
+        <img src="{% static 'dj/dj/justin_chicken_finger.jpg' %}" class="background-media" data-lax-translate-y="0 0, vh -500" data-lax-opacity="0 1, (vh / 2) 0" />
+               <img src="{% static 'dj/dj/Taos Haus-logos_black.png' %}" class="background-media" data-lax-translate-y="0 0, vh -500" data-lax-opacity="0 1, (vh / 2) 0" />
+
+        <img src="{% static 'dj/dj/justin_sunset.jpg' %}" class="background-media" data-lax-translate-y="0 0, vh -500" data-lax-opacity="0 1, (vh / 2) 0" />
+        <img src="{% static 'dj/dj/photo_2024-05-22_09-29-56.jpg' %}" class="background-media" data-lax-translate-y="0 0, vh -500" data-lax-opacity="0 1, (vh / 2) 0" />
+        <video src="{% static 'dj/dj/justin_dj.MOV' %}" class="background-media" autoplay muted loop></video>
+               <img src="{% static 'dj/dj/outside_ski_sf.gif' %}" class="background-media" data-lax-translate-y="0 0, vh -500" data-lax-opacity="0 1, (vh / 2) 0" />
+        <img src="{% static 'dj/dj/video_2024-05-22_09-30-47.gif' %}" class="background-media" data-lax-translate-y="0 0, vh -500" data-lax-opacity="0 1, (vh / 2) 0" />
+        <img src="{% static 'dj/dj/forceimage.jpg' %}" class="background-media" data-lax-translate-y="0 0, vh -500" data-lax-opacity="0 1, (vh / 2) 0" />
+
+        <video src="{% static 'dj/dj/dallee_bangers.MP4' %}" class="background-media" autoplay muted loop></video>
+
+    </div>
 {% include 'dj/dj_nav.html' %}
 {% block main-body %}
 
@@ -95,13 +155,64 @@
   <script src='{% static "vendor/glightbox/js/glightbox.min.js"  %}'></script>
   <script src='{% static "vendor/isotope-layout/isotope.pkgd.min.js"  %}'></script>
   <script src='{% static "vendor/swiper/swiper-bundle.min.js"  %}'></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src='{% static "dj/js/main.js" %}'></script>
 <!--  <script src="{% static 'dj/js/htmx.min.js' %}" defer></script>-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+       $(document).ready(function() {
+    $('#submit-button').on('click', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        var $form = $('#review-form');
+        submitForm($form);
+    });
+
+    function submitForm($form) {
+        console.log('Submitting form...');
+        $('#spinner-block-id').removeClass('d-none');
+        $.ajax({
+            type: 'POST',
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            success: function(response) {
+                console.log('Form submission successful');
+                if (response.success) {
+                    $('#review-form').addClass('d-none');
+                    $('#spinner-block-id').addClass('d-none');
+                    $('#success-block').removeClass('d-none');
+                    $('#after-success').removeClass('d-none');
+                    // Adjust the delay time as needed
+                } else {
+                    console.log('Error response received:');
+                    console.log(response.error_message);
+                    console.log(response.form_errors);
+                    $('#spinner-block-id').addClass('d-none');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error occurred during form submission:');
+                console.error(xhr.responseText);
+                $('#spinner-block-id').addClass('d-none');
+            }
+        });
+    }
+
+    $('#success-block').on('hidden.bs.modal', function() {
+    $('#spinner-done').removeClass('d-none');
+        $('#after-success').removeClass('d-none');
+        $('#spinner-done').addClass('d-none');
+
+    });
+});
+    </script>
 <!--
 <script>
 
@@ -119,6 +230,23 @@ lastScrollTop = scrollTop;
 });
 </script>
   -->
+    <script src="https://unpkg.com/rellax@1.12.1/rellax.min.js"></script>
+    <script>
+        var rellax = new Rellax('.background-media');
+    </script>
 
+   <script>
+       $(document).ready(function() {
+        $('#mobile-navbar-toggler').click(function() {
+            $('#navbarSupportedContentMobile').toggleClass('show');
+        });
 
+        // Close the mobile navigation menu when a nav-link is clicked
+        $('.mobile-nav .navbar-nav a').click(function() {
+            $('#navbarSupportedContentMobile').removeClass('show');
+        });
+    });
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGFtsSah9o1RB5PbZOk6Gz0Ck/PJp46rQ5Z23s5e8XKZ" crossorigin="anonymous"></script>
 </body>

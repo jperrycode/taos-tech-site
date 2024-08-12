@@ -1,0 +1,66 @@
+{% load static %}
+<div class="container" data-aos="fade-up">
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+      <div class="col-xl-8 col-lg-8 mb-1">
+        <h1 class='text-light element-txt-shad text-center fw-bold'>Taos<span class='text-gradient element-txt-shad'> H</span>A<span class='text-gradient element-txt-shad'>U</span>S Reviews</h1>
+
+
+    </div>
+</div>
+<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+
+<h3 class="text-center text-light element-txt-shad">Leave a Review</h3>
+
+
+
+{% include 'dj/review_form.html' %}
+
+
+
+    </div>
+
+
+
+    <div class="row gy-4 mt-5 justify-content-center review-section" data-aos="zoom-in" data-aos-delay="250">
+
+<p class="text-center text-danger">***All Submitted Reviews will be approved before being posted to be sure an actual customer submitted***</p>
+
+    </div>
+
+    <div class="row gy-4 mt-5 justify-content-center review-section" data-aos="zoom-in" data-aos-delay="250">
+
+
+    </div>
+
+
+  </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#review-form');
+
+    form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+    }, false);
+
+    // Custom validation for star rating select
+    const starRating = document.querySelector('#star_rating');
+    starRating.addEventListener('change', function () {
+        if (starRating.value === "") {
+            starRating.setCustomValidity("Please select a star rating.");
+        } else {
+            starRating.setCustomValidity("");
+        }
+    });
+});
+</script>
+
+
+
+
+

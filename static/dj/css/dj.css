@@ -343,3 +343,80 @@ background: linear-gradient(45deg, rgba(15,238,226,1) 29%, rgba(29,27,27,0.98482
     }
 
 
+/* Additional styles to enhance the fade effect */
+.fade {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade.show {
+    opacity: 1;
+}
+
+.fade:not(.show) {
+    opacity: 0;
+}
+
+.modal-backdrop {
+display: none !important;
+}
+   .spinner-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+        .loading-spinner,
+        .loading-done {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+
+.review-hover {
+border-radius: 20%;
+transition: all 0.5s ease-in-out;
+
+
+
+}
+.review-hover:hover {
+scale: 1.15;
+background: rgb(174,226,238);
+background: radial-gradient(circle, rgba(174,226,238,.2) 0%, rgba(255,242,0,0.1) 100%);
+border: 3px double rgba(255, 255, 255, 0.1);
+border-radius: 20%;
+}
+
+
+
+        /* Custom CSS for mobile navigation */
+        .mobile-nav {
+            display: none;
+        }
+
+        @media (max-width: 500.98px) {
+            .mobile-nav {
+                display: block;
+            }
+            .desktop-nav {
+                display: none;
+            }
+        }
+    #unique-navbar.hidden {
+        top: -100px; /* Adjust this value based on the navbar height */
+        transition: top 0.3s;
+    }

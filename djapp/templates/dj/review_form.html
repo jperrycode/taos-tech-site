@@ -1,0 +1,177 @@
+{% load static %}
+<div class="row">
+    <div class="col-12 text-center">
+        <p class="fs-4 element-txt-shad fw-bold text-light">Thank you for taking the time to leave us a review!</p>
+    </div>
+</div>
+
+<div class="row px-4">
+    <div class="col-xl-3 col-lg-2"></div>
+    <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
+        <form method="POST" action="/dj/leave-review/submit/" role="form" class="contact-text-block bg-opacity-50 needs-validation" id="review-form" novalidate>
+    {% csrf_token %}
+
+    <div class="row mb-3">
+        <div class="form-group">
+            {{ review_form.reviewer_name.errors }}
+            {{ review_form.reviewer_name }}
+            <div class="invalid-feedback">
+                Please enter your name.
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="form-group">
+            {{ review_form.date_of_event.errors }}
+            {{ review_form.date_of_event }}
+            <div class="invalid-feedback">
+                Please select the date of the event.
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="form-group">
+            {{ review_form.review_event_type.errors }}
+            {{ review_form.review_event_type }}
+            <div class="invalid-feedback">
+                Please select the type of event.
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="form-group">
+            {{ review_form.event_city.errors }}
+            {{ review_form.event_city }}
+            <div class="invalid-feedback">
+                Please enter the city of the event.
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="form-group w-50 mx-auto">
+            {{ review_form.star_rating.errors }}
+            <select class="form-select" id="{{ review_form.star_rating.id_for_label }}" name="{{ review_form.star_rating.name }}" required>
+                <option value="" selected disabled>How would you rate the DJ?</option>
+                {% for value, label in review_form.star_rating.field.choices %}
+                    <option value="{{ value }}" {% if review_form.star_rating.value == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+                Please select a star rating.
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="form-group">
+            {{ review_form.rating_message_front.errors }}
+            {{ review_form.rating_message_front }}
+            <div class="invalid-feedback">
+                Please leave a review message
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="form-group">
+            {{ review_form.rating_message_dj.errors }}
+            {{ review_form.rating_message_dj }}
+            <div class="invalid-feedback">
+                Please leave a message for the DJ.
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-danger" id="submit-button">Submit</button>
+    </div>
+</form>
+
+
+
+    <div id="spinner-block-id" class="spinner-overlay d-none">
+        <div id="loading-spinner" class="loading-spinner"></div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="success-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Thank you for Reaching Out!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body fw-bold">
+                    <p>We will reach out to you shortly!</p>
+                    
+                    <p>If this is an emergency, please contact us directly:</p>
+                    <p>Call Us Here: <a class="text-danger" href="tel:9087665152">908.766.5152</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div id='after-success' class="row d-none">
+    <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-left" data-aos-delay="100">
+        <p class="fst-italic fw-bold mt-5 fs-3 text-light">
+Joy through Dancing, Music & Banter        </p>
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1801925164%3Fsecret_token%3Ds-IpQvxx8CEZf&color=%23ff1f1f&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/taos-haus-bumps" title="THIS JUSTIN" target="_blank" style="color: #cccccc; text-decoration: none;">THIS JUSTIN</a> · <a href="https://soundcloud.com/taos-haus-bumps/fagioli-2nd-edition-funk/s-IpQvxx8CEZf" title="A Whole Bowl Of Pasta Fagioli - 2nd Edition Funk" target="_blank" style="color: #cccccc; text-decoration: none;">A Whole Bowl Of Pasta Fagioli - 2nd Edition Funk</a></div>
+    </div>
+
+<a href="https://g.page/r/CQASQCUWUf8iEB0/review" class="mx-auto btn btn-primary">Leave a Review on Google Too!</a>
+
+    <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-left" data-aos-delay="100">
+
+        <p class="fst-italic fs-3 fw-bold mt-5 text-light">
+Live Mixes to Listen To       </p>
+
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1579372034&color=%23ff1f1f&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/taos-haus-bumps" title="THIS JUSTIN" target="_blank" style="color: #cccccc; text-decoration: none;">THIS JUSTIN</a> · <a href="https://soundcloud.com/taos-haus-bumps/chunk-town-usa" title="Chunk-Town USA" target="_blank" style="color: #cccccc; text-decoration: none;">Chunk-Town USA</a></div>
+
+
+
+    </div>
+</div>
+
+<!--<style>-->
+<!--/* Ensure the parent container takes up the full viewport */-->
+<!--.spinner-overlay {-->
+<!--    position: fixed;-->
+<!--    top: 0;-->
+<!--    left: 0;-->
+<!--    width: 100%;-->
+<!--    height: 100%;-->
+<!--    display: flex;-->
+<!--    justify-content: center;-->
+<!--    align-items: center;-->
+<!--    z-index: 1000; /* Ensure it's on top of other content */-->
+<!--    background-color: rgba(255, 255, 255, 0.5); /* Optional: Add a semi-transparent background */-->
+<!--}-->
+
+<!--/* Style for the loading spinner */-->
+<!--.loading-spinner {-->
+<!--    width: 50px;-->
+<!--    height: 50px;-->
+<!--    border: 5px solid #f3f3f3; /* Light gray */-->
+<!--    border-top: 5px solid #3498db; /* Blue */-->
+<!--    border-radius: 50%;-->
+<!--    animation: spin 1s linear infinite;-->
+<!--}-->
+
+<!--/* Style for the form submitted message */-->
+<!--.loading-done {-->
+<!--    font-size: 1.25em;-->
+<!--    text-align: center;-->
+<!--    color: #333; /* Adjust the text color as needed */-->
+<!--    font-weight: bold;-->
+<!--    -->
+<!--}-->
+
+<!--/* Animation for the spinner */-->
+<!--@keyframes spin {-->
+<!--    0% { transform: rotate(0deg); }-->
+<!--    100% { transform: rotate(360deg); }-->
+<!--}-->
+<!--</style>-->

@@ -1,0 +1,161 @@
+{% load django_htmx %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HG5FY6Y4P2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HG5FY6Y4P2');
+</script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+{% load static %}
+
+
+  <title>{% block title %}{% endblock %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href='{% static "frontend/vendor/aos/aos.css" %}' rel="stylesheet">
+  <link href='{% static "frontend/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+  <link href='{% static "frontend/vendor/bootstrap-icons/bootstrap-icons.css" %}' rel="stylesheet">
+  <link href='{% static "frontend/vendor/boxicons/css/boxicons.min.css" %}' rel="stylesheet">
+  <link href='{% static "frontend/vendor/glightbox/css/glightbox.min.css" %}' rel="stylesheet">
+  <link href='{% static "frontend/vendor/remixicon/remixicon.css" %}' rel="stylesheet">
+  <link href='{% static "frontend/vendor/swiper/swiper-bundle.min.css" %}' rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href='{% static "frontend/css/dj.css" %}' rel="stylesheet">
+  <link href='{% static "frontend/css/ecom_hero.css" %}' rel="stylesheet">
+  <link href='{% static "frontend/css/style.css" %}' rel="stylesheet">
+
+  <!-- HTMX -->
+    <style>
+        /* Custom CSS for mobile navigation */
+        .mobile-nav {
+            display: none;
+        }
+
+        @media (max-width: 991.98px) {
+            .mobile-nav {
+                display: block;
+            }
+            .desktop-nav {
+                display: none;
+            }
+        }
+    </style>
+
+<style>
+.img-overlay {
+  position: relative;
+}
+
+.image-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8); /* Adjust background color and opacity as needed */
+  padding: 20px; /* Adjust padding as needed */
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Add scrollbars for long content */
+}
+
+
+
+</style>
+</head>
+
+<body>
+{% include 'frontend/nav.html' %}
+{% block main-body %}
+
+{% endblock %}
+
+  <!-- Footer-->
+
+  {% if request.path != '/contact-us-success/' %}
+  {% include 'frontend/footer.html' %}
+  {% endif %}
+  
+  <!-- Footer-->
+
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src='{% static "frontend/vendor/purecounter/purecounter_vanilla.js" %}'></script>
+  <script src='{% static "frontend/vendor/aos/aos.js" %}'></script>
+  <script src='{% static "frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"  %}'></script>
+  <script src='{% static "frontend/vendor/glightbox/js/glightbox.min.js"  %}'></script>
+  <script src='{% static "frontend/vendor/isotope-layout/isotope.pkgd.min.js"  %}'></script>
+  <script src='{% static "frontend/vendor/swiper/swiper-bundle.min.js"  %}'></script>
+
+  <!-- Template Main JS File -->
+  <script src='{% static "frontend/js/main.js" %}'></script>
+  <script src="{% static 'frontend/js/htmx.min.js' %}" defer></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+      $(document).ready(function() {
+        var lastScrollTop = 0;
+        $(window).scroll(function(event) {
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop) {
+                // Downscroll code
+                $('.navbar-hide-on-scroll').removeClass('scroll-show').addClass('scroll-hide');
+            } else {
+                // Upscroll code
+                $('.navbar-hide-on-scroll').removeClass('scroll-hide').addClass('scroll-show');
+            }
+            lastScrollTop = st;
+        });
+
+        $('#mobile-navbar-toggler').click(function() {
+            $('#navbarSupportedContentMobile').toggleClass('show');
+        });
+
+        $('.mobile-nav .navbar-nav a').click(function() {
+    $('#navbarSupportedContentMobile').removeClass('show');
+});
+
+$('.desktop-nav .navbar-nav a').click(function() {
+    $('#navbarSupportedContentDesktop').removeClass('show');
+});
+
+
+               $(document).ready(function(){
+            $('.icon-box').hover(function(){
+                $(this).find('.default-content').css('opacity', '0');
+                $(this).find('.hover-content').css('opacity', '1');
+            }, function(){
+                $(this).find('.default-content').css('opacity', '1');
+                $(this).find('.hover-content').css('opacity', '0');
+            });
+        });
+</script>
+
+</body>

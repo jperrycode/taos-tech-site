@@ -292,22 +292,7 @@
 
 })()
 
-let prevScrollPos = window.scrollY;
-const navbar = document.querySelector(".navbar");
 
-window.onscroll = function () {
-    let currentScrollPos = window.scrollY;
-
-    if (prevScrollPos > currentScrollPos) {
-        // Scrolling up, show the navbar
-        navbar.style.top = "0";
-    } else {
-        // Scrolling down, hide the navbar
-        navbar.style.top = `-${navbar.clientHeight}px`;
-    }
-
-    prevScrollPos = currentScrollPos;
-};
 
 
 // hero js background
@@ -336,4 +321,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
     changeMedia();
 });
+
+function review_form_view() {
+    const heroDj = document.getElementById('hero-dj');
+    const aboutDj = document.getElementById('about-dj');
+
+    if (aboutDj.classList.contains('d-none')) {
+        // Show aboutDj and hide heroDj
+        heroDj.classList.remove('show');
+        aboutDj.classList.remove('d-none');
+        setTimeout(() => {
+            aboutDj.classList.add('show');
+            heroDj.classList.add('d-none');
+        }, 10); // Small delay to ensure class application
+    } else {
+        // Show heroDj and hide aboutDj
+        aboutDj.classList.remove('show');
+        heroDj.classList.remove('d-none');
+        setTimeout(() => {
+            heroDj.classList.add('show');
+            aboutDj.classList.add('d-none');
+        }, 10); // Small delay to ensure class application
+    }
+}
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var navbar = document.getElementById("unique-navbar");
+        var lastScrollTop = 0;
+
+        window.addEventListener("scroll", function() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll Down
+                navbar.classList.add("hidden");
+            } else {
+                // Scroll Up
+                navbar.classList.remove("hidden");
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        }, false);
+    });
+
 
