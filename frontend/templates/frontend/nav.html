@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg ps-4 pt-3 navbar-hide-on-scroll fixed-top">
     <div class="container-fluid">
         <!-- Brand -->
-        <a class="navbar-brand flashing-effect fs-5 element-txt-shad" href="{% url 'home' %}">
+        <a id='navbarBrand' class="navbar-brand flashing-effect fs-5 element-txt-shad" href="{% url 'home' %}">
             Taos Haus Tech Solutions
         </a>
 
@@ -27,11 +27,16 @@
                     <a class="nav-link" href="{% url 'team' %}">The Team</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact_page' %}">Contact Justin</a>
+                    <a class="nav-link" href="{% url 'contact_page' %}">Contact Us</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'portfolio' %}">Projects</a>
+                </li>
+                     <li class="nav-item">
                     <a class="nav-link" href="{% url 'this-justin' %}">Taos Haus Thumps</a>
                 </li>
+
+
             </ul>
 
             <!-- Social Media Icons -->
@@ -55,3 +60,20 @@
         </div>
     </div>
 </nav>
+
+    <script>
+        function adjustFontSize() {
+            const element = document.getElementById('navbarBrand');
+            if (window.innerWidth < 600) {
+                element.classList.remove('fs-5');
+            } else {
+                element.classList.add('fs-5');
+            }
+        }
+
+        // Adjust font size on initial load
+        adjustFontSize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', adjustFontSize);
+    </script>

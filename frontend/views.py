@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
 from django.urls import reverse
+from django.views.generic import TemplateView, DetailView
 
 
 
@@ -98,14 +99,10 @@ class StagePageView(View):
         return render(request, 'frontend/stageing.html', context)
 
 
+class PortfolioPageView(View):
+    def get(self, request):
+        contact_form = ContactForm()
+        context = {'contact_form': contact_form}
+        return render(request, 'frontend/index_portfolio.html', context)
 
 
-
-# class DjPageView(TemplateView):
-#     template_name = 'dj/dj_index.html'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['contact_form'] = ContactForm()
-#         context['services'] = DjServices.objects.all()
-#         return context

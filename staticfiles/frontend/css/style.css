@@ -1680,7 +1680,7 @@ background-color: rgba(217, 255, 0, 0.472);
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.08);
     }
 }
 
@@ -1762,5 +1762,11 @@ background: linear-gradient(4deg, rgba(237,7,7,1) 13%, rgba(29,30,16,1) 46%, rgb
             .icon-box ul {
                 padding-left: 20px; /* Adjust padding for better spacing */
             }
+
         }
 
+@media (max-width: 600px) {
+
+#navbar-brand {font-size:1rem;
+background-color: rgba(48, 25, 52, 0.1); /* Dark purple with 90% opacity */}
+}
