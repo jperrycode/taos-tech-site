@@ -1,0 +1,20 @@
+{% extends 'frontend/tech_base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+
+
+{% block main-body %}
+
+ <!-- ======= Hero Section ======= -->
+  <section id="hero_ecom" class="d-flex align-items-center justify-content-center">
+    {% include 'frontend/portfolio.html' %}
+  </section><!-- End Hero -->
+
+<!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact mb-5" style="background: linear-gradient(to bottom, #000000, #ffffff);">
+     {% include 'frontend/contact.html' %}
+    </section><!-- End Contact Section -->
+
+
+
+{% endblock %}
