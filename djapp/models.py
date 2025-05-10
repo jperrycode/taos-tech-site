@@ -41,3 +41,7 @@ class Reviews(models.Model):
         def __str__(self) -> str:
             return self.reviewer_name
 
+
+class SoundCloudEmbed(models.Model):
+    embed_html = models.TextField(default='<p>Nothing to Show</p>', blank=False, null=False)
+    show_date = models.DateField()
