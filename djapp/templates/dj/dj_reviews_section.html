@@ -2,7 +2,6 @@
 
 
 
-
 <div id="" class="container master-container" data-aos="fade-up">
   <div class="row mb-3 text-center print">
     
@@ -18,29 +17,67 @@
 Joy through Dancing, Music & Banter        </p>
 <div class="row order-1 order-lg-2 text-center" data-aos="fade-left" data-aos-delay="100">
 
-        {% for review_item in review %}
-    {% if not review_item.review_pass %}
-    {% else %}
+      {% for review_item in review %}
+    {% if review_item.review_pass %}
+        <div class="col-lg-5 col-md-12 col-sm-12 mx-auto review-box bg-transparent m-3 p-5 review-hover">
+            <ul class="list-unstyled">
+                <li class="fst-italic fw-bold mt-5 fs-3 element-txt-shad">
+                    {{ review_item.reviewer_name }}
+                </li>
+                <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">
+                    {{ review_item.event_city }}
+                </li>
+                <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">
+                    <img src="https://i.ibb.co/ncBS4t4/review-five-stars.png" alt="review-five-stars" border="0" id="stars">
+                </li>
 
-<div class="col-lg-5 col-md-12 col-sm-12 mx-auto review-box bg-transparent m-3 p-5 review-hover">
-    <ul class="list-unstyled">
-        <li class="fst-italic fw-bold mt-5 fs-3 element-txt-shad">{{ review_item.reviewer_name }}  -  {{ review_item.event_city }}</li>
-        <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">                    <img src="https://i.ibb.co/ncBS4t4/review-five-stars.png" alt="review-five-stars" border="0" id="stars"></li>
+                <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">
+                    {% if review_item.rating_message_front|length > 125 %}
+                        {{ review_item.rating_message_front|truncatechars:125 }}
+                        <a href="#" class="text-decoration-underline text-light review-hover" data-bs-toggle="modal" data-bs-target="#reviewModal{{ forloop.counter }}">
+                            See Full Review
+                        </a>
+                    {% else %}
+                        {{ review_item.rating_message_front }}
+                    {% endif %}
+                </li>
 
-        <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">{{ review_item.rating_message_front }}</li>
-        <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">{{ review_item.date_of_event }}</li>
+                <li class="fst-italic fw-bold mt-1 fs-4 element-txt-shad">
+                    {{ review_item.date_of_event }}
+                </li>
+            </ul>
+        </div>
 
-    </ul>
-
+        {% if review_item.rating_message_front|length > 125 %}
+<div class="modal fade review-box" id="reviewModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="reviewModalLabel{{ forloop.counter }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal dark-overlay text-white">
+            <div class="modal-header border-0">
+                <h5 class="modal-title element-txt-shad" id="reviewModalLabel{{ forloop.counter }}">
+                    {{ review_item.reviewer_name }} – {{ review_item.event_city }} ({{ review_item.date_of_event }})
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="element-txt-shad">{{ review_item.rating_message_front }}</p>
+            </div>
+        </div>
+    </div>
 </div>
-        {% if forloop.counter|divisibleby:2 %}
-    <div class="w-100 d-md-none"></div>
-    {% endif %}
 
+
+
+        {% endif %}
+
+        {% if forloop.counter|divisibleby:2 %}
+            <div class="w-100 d-md-none"></div>
+        {% endif %}
     {% endif %}
-    {% empty %}
+{% empty %}
     <div class="row"><h1>No Reviews here, check out google</h1></div>
-        {% endfor %}
+{% endfor %}
+
+
     </div>
 </div>
 

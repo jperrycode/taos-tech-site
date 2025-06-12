@@ -21,6 +21,15 @@ class DjPageView(TemplateView):
         context['services'] = DjServices.objects.all()
         return context
 
+class DjRadioView(TemplateView):
+    template_name = 'dj/dj_radio_show_page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['contact_form'] = ContactForm()
+        context['services'] = DjServices.objects.all()
+        return context
+
 
 class DjReviewView(CreateView):
     form_class = ReviewForm
@@ -54,3 +63,6 @@ class ReviewPost(View):
             else:
                 form_errors = contact_form.errors.as_json()
                 return JsonResponse({'success': False, 'form_errors': form_errors})
+
+def dj_about_section(request):
+    return render(request, "dj/dj_about_section.html")
