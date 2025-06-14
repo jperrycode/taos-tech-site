@@ -38,10 +38,18 @@ class Reviews(models.Model):
         verbose_name = "Review"
         verbose_name_plural = "Reviews"
 
-        def __str__(self) -> str:
-            return self.reviewer_name
+
+    def __str__(self) -> str:
+        return self.reviewer_name
 
 
 class SoundCloudEmbed(models.Model):
     embed_html = models.TextField(default='<p>Nothing to Show</p>', blank=False, null=False)
     show_date = models.DateField()
+
+class RadioGuestDj(models.Model):
+    guest_dj_name = models.CharField(max_length=30, null=True, blank=True)
+    guest_dj_home = models.CharField(max_length=30, null=True, blank=True)
+    guest_dj_music_url = models.URLField()
+
+

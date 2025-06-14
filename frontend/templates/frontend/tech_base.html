@@ -1,4 +1,5 @@
-{% load django_htmx %}
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,7 +79,58 @@
   overflow: auto; /* Add scrollbars for long content */
 }
 
+    /* Media query replaces JavaScript font control */
+    #navbarBrand {
+        font-size: 1.25rem; /* default for desktop */
+    }
 
+    @media (max-width: 600px) {
+        #navbarBrand {
+            font-size: 1rem !important;
+        }
+    }
+
+    /* Ensure nav items are spaced well on mobile */
+    .navbar-nav .nav-item {
+        margin-bottom: 0.5rem;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-nav .nav-item {
+            margin-bottom: 0; /* remove spacing for desktop */
+        }
+    }
+
+    /* Social Icons Spacing */
+    .navbar-nav.d-flex.flex-row .nav-item {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    /* Increase tap target size */
+    .nav-link {
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar-hide-on-scroll {
+        transition: top 0.3s;
+    }
+
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: #000 !important;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .navbar-collapse .nav-link {
+        color: #fff !important; /* Ensure text is visible on black */
+    }
+
+    .navbar-collapse .nav-link:hover {
+        color: #ccc !important;
+    }
+}
 
 </style>
 </head>
@@ -156,6 +208,24 @@ $('.desktop-nav .navbar-nav a').click(function() {
                 $(this).find('.hover-content').css('opacity', '0');
             });
         });
+</script>
+
+<script>
+    // Optional enhancement: hide navbar on scroll down, show on scroll up
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar-hide-on-scroll');
+
+    window.addEventListener("scroll", function () {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop && currentScroll > 80) {
+            // Scroll Down
+            navbar.style.top = "-100px";
+        } else {
+            // Scroll Up
+            navbar.style.top = "0";
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
 </script>
 
 </body>
